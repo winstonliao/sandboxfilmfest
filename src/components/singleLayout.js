@@ -4,11 +4,14 @@ import styled from 'styled-components'
 
 const SingleLayout = ({children}) => (
 	<StyledSingleLayout>
-    {{ ...children }}
+    {...children}
 	</StyledSingleLayout>
 )
 
 const StyledSingleLayout = styled.div`
+  height: 100vh;
+  width: 100vw;
+	padding: 10vh 20vw;
 `
 
 SingleLayout.propTypes = {

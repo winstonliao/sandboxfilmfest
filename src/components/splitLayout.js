@@ -14,6 +14,15 @@ const SplitLayout = ({left, right}) => (
 )
 
 const StyledSplitLayout = styled.div`
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+  width: 100vw;
+
+  & > div {
+    height: 100%;
+  }
 `
 
 SplitLayout.propTypes = {

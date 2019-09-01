@@ -1,20 +1,30 @@
 import PropTypes from "prop-types"
 import React from "react"
+import styled from 'styled-components'
 
 const Footer = ({ siteTitle }) => (
   <StyledFooter>
-    <span>© {{siteTitle}} &nbsp;{new Date().getFullYear()}</span>
+    <span>© {siteTitle.toUpperCase()} &nbsp;{new Date().getFullYear()}</span>
   </StyledFooter>
 )
 
 const StyledFooter = styled.footer`
+  height: 20vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--black);
+  color: var(--white);
 `
 
-Header.propTypes = {
+Footer.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+Footer.defaultProps = {
   siteTitle: ``,
 }
 

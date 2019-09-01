@@ -1,0 +1,34 @@
+:root {
+  --black: #181818;
+  --white: #FFFFFF;
+  --yellow: #FFD500;
+
+  --light-weight: 400;
+  --medium-wieght: 500;
+  --heavy-weight: 600;
+
+  --small: 0.75em;
+  --medium: 1.25em;
+  --large: 1.5em;
+  --larger: 2.5em;
+  --display: 5em;
+
+  --display-font: 'Playfair Display';
+  --main-font: 'Work Sans';
+
+  --width-large: 50%;
+  --width-medium: 65%;
+  --width-small: 75%;
+}
+
+@media (max-width: 907.98px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 399.98px) {
+  :root {
+    font-size: 12px;
+  }
+}
