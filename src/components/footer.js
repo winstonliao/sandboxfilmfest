@@ -4,12 +4,12 @@ import styled from 'styled-components'
 
 const Footer = ({ siteTitle }) => (
   <StyledFooter>
-    <span>© {siteTitle.toUpperCase()} &nbsp;{new Date().getFullYear()}</span>
+    <span>© {siteTitle.toUpperCase()}&nbsp;{new Date().getFullYear()}</span>
   </StyledFooter>
 )
 
 const StyledFooter = styled.footer`
-  height: 20vh;
+  height: 40vh;
   width: 100vw;
 
   display: flex;

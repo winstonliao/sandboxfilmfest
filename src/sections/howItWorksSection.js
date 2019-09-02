@@ -52,22 +52,6 @@ const StyledHowItWorksSection = styled.div`
 			font-size: var(--display);
 		}
 	}
-
-	& .desc {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		height: 100%;
-		width: 100%;		
-		padding: 10rem 10rem;
-
-		background-color: var(--black);
-		color: var(--white);
-
-		& div:last-child {
-			margin-bottom: 0;
-		}
-	}
 `
 
 HowItWorksSection.propTypes = {

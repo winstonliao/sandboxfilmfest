@@ -60,7 +60,7 @@ const StyledHero = styled.div`
       padding-left: 0.25rem;
 
       font-size: var(--medium);
-      font-weight: var(--heavy-weight);
+      font-weight: var(--medium-weight);
     }
 
     & .title {

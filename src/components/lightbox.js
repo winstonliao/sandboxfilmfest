@@ -5,8 +5,12 @@ class LightBox extends LightBox {
 
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.clickHandler = this.clickHandler.bind(this);
+  }
+
+  clickHandler= event => {
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
   }
 
 	render() {

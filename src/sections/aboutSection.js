@@ -28,9 +28,27 @@ const AboutSection = () => (
 	</StyledAboutSection>
 )
 
-const desc = 'The Sandbox 48-Hour Film Fest was started in May 2018 at Stanford University.'
+const desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
 const profiles = [
+	{
+		name: 'Winston Liao',
+		bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+		link: 'http://winstonliao.com',
+		linkName: 'Portfolio',
+	},
+	{
+		name: 'Jack Virnich',
+		bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+		link: 'http://winstonliao.com',
+		linkName: 'Portfolio',
+	},
+	{
+		name: 'Jason McRuer',
+		bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+		link: 'http://winstonliao.com',
+		linkName: 'Portfolio',
+	},
 ]
 
 const StyledAboutSection = styled.div`
@@ -56,7 +74,7 @@ const StyledAboutSection = styled.div`
 
 	& .carousel-wrapper {
     height: 100vh;
-    padding: 10rem 5rem 10rem 0;
+    padding: 10rem 5rem 10rem 10rem;
 		background-color: var(--black);
   }
 `
