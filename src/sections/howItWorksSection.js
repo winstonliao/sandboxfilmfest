@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import SplitLayout from '../components/splitLayout'
 import Paragraph from '../components/paragraph'
+import ParagraphContainer from '../components/paragraphContainer'
 
 const HowItWorksSection = () => (
 	<StyledHowItWorksSection>
@@ -14,11 +15,11 @@ const HowItWorksSection = () => (
 				</div>
 			}
 			right = {
-				<div className='desc'>
+				<ParagraphContainer>
 					{paragraphs.map((paragraph, i) => (
 						<Paragraph key={i} {...paragraph}></Paragraph>
 					))}
-				</div>
+				</ParagraphContainer>
 			}
 		></SplitLayout>
 	</StyledHowItWorksSection>

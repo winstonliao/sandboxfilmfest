@@ -7,7 +7,7 @@ class Hero extends Component {
     super();
     this.state = {
       action: '',
-      actions: ['WRITE', 'SHOOT', 'DIRECT', 'CREATE'],
+      actions: ['WRITE', 'SHOOT', 'DIRECT', 'EDIT'],
     };
   }
 
@@ -21,7 +21,7 @@ class Hero extends Component {
         action: state.actions[index%4],
       }))
       this.changeAction(index+1);
-    }, 2000)
+    }, 1500)
   }
 
 	render() {
@@ -72,7 +72,6 @@ const StyledHero = styled.div`
 
     & .actionOuter {
       display: inline-block;
-      width: 10rem;
       height: 1.75rem;
     }
 

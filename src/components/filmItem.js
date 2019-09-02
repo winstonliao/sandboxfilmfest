@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FilmItem = ({ image, title }) => (
-	<StyledFilmItem>
+	<StyledFilmItem image={image}>
     <span>{ title.toUpperCase() }</span>
 	</StyledFilmItem>
 )
@@ -13,7 +13,12 @@ const StyledFilmItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 20rem;
+
+  overflow: hidden;
+  height: 0;
+  padding-top: 56.25%;
+
+  background-image: url('${props => props.image}');
   background-color: var(--black);
 
   & span {
@@ -28,9 +33,13 @@ const StyledFilmItem = styled.div`
 `
 
 FilmItem.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
 }
 
 FilmItem.defaultProps = {
+  title: '',
+  image: '',
 }
 
 export default FilmItem

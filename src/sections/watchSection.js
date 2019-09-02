@@ -4,14 +4,23 @@ import styled from 'styled-components'
 import SplitLayout from '../components/splitLayout'
 import Carousel from '../components/carousel'
 import FilmItem from '../components/filmItem'
-
+import Year from '../components/year'
 
 class watchSection extends Component {
 
   constructor() {
     super();
     this.state = {
+      year: '',
     };
+    this.year2019 = React.createRef();
+    this.year2018 = React.createRef();
+  }
+
+  componentDidMount() {
+    this.setState(state => ({
+      year: '2019',
+    }))
   }
 
 	render() {
@@ -20,14 +29,14 @@ class watchSection extends Component {
         <SplitLayout
           left={
             <div className='title-wrapper'>
-              <span className='title'>WATCH</span>
-              <span className='title'>2019</span>
-              <span className='title'>2018</span>
+              <span>WATCH</span>
+              <Year year={2019} targetYear={this.state.year} ref={this.year2019}></Year>
+              <Year year={2018} targetYear={this.state.year} ref={this.year2018}></Year>
             </div>
           }
           right={
             <div className='carousel-wrapper'>
-              <Carousel>
+              <Carousel isLight={true}>
                 {films.map((film, i) => (
                   <FilmItem key={i} {...film}></FilmItem>
                 ))}
@@ -48,17 +57,23 @@ const StyledwatchSection = styled.div`
 		justify-content: center;
 		height: 100%;
 
-		& .title {
-			padding-left: 10rem;
+		& > span {
+      margin-right: auto;
+			margin-left: 10rem;
 			line-height: 6rem;
 
 			color: var(--black);
 			font-family: var(--display-font);
 			font-size: var(--display);
 		}
+
+    & .underline {
+      border-bottom: solid 8px var(--yellow);
+    }
 	}
 
   & .carousel-wrapper {
+    height: 100vh;
     padding: 10rem 5rem 10rem 0;
   }
 `
