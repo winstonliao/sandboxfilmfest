@@ -28,6 +28,7 @@ class Modal extends Component {
 }
 
 const StyledModal = styled.div`
+  z-index: 100;
   position: fixed;
 
   & .overlay {
@@ -61,11 +62,6 @@ const StyledModal = styled.div`
       }
 
       & .modal {
-        position: absolute;
-        width: 30rem;
-        padding: 4rem;
-        text-align: center;
-        opacity: 1;
 
         background-color: var(--white);
         color: var(--black);
@@ -80,10 +76,6 @@ const StyledModal = styled.div`
           right: 1rem;
           line-height: var(--small);
           cursor: pointer;
-        }
-
-        & > p:last-child {
-          margin-bottom: 0;
         }
       }
     }
