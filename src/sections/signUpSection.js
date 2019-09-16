@@ -5,6 +5,7 @@ import SingleLayout from '../components/singleLayout'
 import Input from '../components/input'
 import Button from '../components/button'
 import Modal from '../components/modal'
+import MessageBox from '../components/messageBox'
 
 class SignUpSection extends Component {
 
@@ -72,7 +73,7 @@ class SignUpSection extends Component {
 
 	render() {
     return(
-			<StyledSignUpSection>
+			<StyledSignUpSection id={this.props.id}>
 				<SingleLayout>
 					<p className='title'>SIGN UP</p>
 					<p className='desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -80,8 +81,7 @@ class SignUpSection extends Component {
 					<Button name='SUBMIT' color='var(--white)' bgColor='var(--yellow)' onClick={ this.submitHandler }></Button>
 				</SingleLayout>
 				<Modal showModal={this.state.showModal} clickHandler={this.modalHandler}>
-          <h2>Thanks!</h2>
-          <p>You have been successfully added to our mailing list. Keep an eye out for future announcements.</p>
+          <MessageBox headline='Thanks!' message='You have been added to our mailing list.'></MessageBox>
         </Modal>
 			</StyledSignUpSection>
 		)

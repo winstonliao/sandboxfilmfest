@@ -1,54 +1,51 @@
-import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 
-class LightBox extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-	render() {
-    return(
-			<StyledLightBox>
-        <div className='lightbox'>
-          <div className='video'>
-            <iframe>{ this.props.video }</iframe>
-          </div>
-          <div className='main-info'>
-            <p className='title'>{ this.props.title }</p >
-            <p className='logline'>{ this.props.logline }</p>
-          </div>
-          <div className='desc'>
-            <div className='category'>
-              <p>Created by</p>
-              {Array.from(this.props.creators).map((creator, i) => (
-                <p key={i}>{ creator }</p>
-              ))}
-            </div>
-            <div className='category'>
-              <p>Starring</p>
-              {Array.from(this.props.actors).map((actor, i) => (
-                <p key={i}>{ actor }</p>
-              ))}
-            </div>
-            <div className='category'>
-              <p>Awards</p>
-              {Array.from(this.props.awards).map((award, i) => (
-                <p key={i}>{ award }</p>
-              ))}
-            </div>
-            <div className='category'>
-              <p>Prompts</p>
-              {Array.from(this.props.prompts).map((prompt, i) => (
-              [<span className='prompt'>{ prompt.type }:</span>,
-              <span>{ prompt.text }</span>,]
-            ))}
-            </div>
-          </div>
+const LightBox = ({ title, logline, video, creators, actors, awards, prompts }) => (
+  <StyledLightBox>
+    <div className='lightbox'>
+      <div className='video'>
+        <div class='embed-container'>
+          <iframe src={ video } frameborder='0' allowfullscreen></iframe>
         </div>
-			</StyledLightBox>
-		)
-	}
-}
+      </div>
+      <div className='main-info'>
+        <p className='title'>{ title.toUpperCase() }</p >
+        <p className='logline'>{ logline }</p>
+      </div>
+      <div className='desc'>
+        <div className='category'>
+          <p>CREATED BY</p>
+          {Array.from(creators).map((creator, i) => (
+            <p key={i}>{ creator }</p>
+          ))}
+        </div>
+        <div className='category'>
+          <p>STARRING</p>
+          {Array.from(actors).map((actor, i) => (
+            <p key={i}>{ actor }</p>
+          ))}
+        </div>
+        <div className='category'>
+          <p>AWARDS 🏆</p>
+          {Array.from(awards).map((award, i) => (
+            <p key={i}>{ award }</p>
+          ))}
+        </div>
+        <div className='category'>
+          <p>PROMPTS</p>
+          {Object.keys(prompts).map((prompt, i) => (
+            <p className='prompt'>
+              <span>{ prompt.charAt(0).toUpperCase() + prompt.slice(1) }: </span>
+              <span>{ prompts[prompt].charAt(0).toUpperCase() + prompts[prompt].slice(1) }</span>
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </StyledLightBox>
+)
 
 const StyledLightBox = styled.div`
 
@@ -62,6 +59,22 @@ const StyledLightBox = styled.div`
     grid-template-areas: 
       'video desc'
       'main-info desc'
+  }
+
+  & .embed-container { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    max-width: 100%; 
+  } 
+  
+  & .embed-container iframe, .embed-container object, .embed-container embed { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
   }
 
   & .video {
@@ -90,13 +103,12 @@ const StyledLightBox = styled.div`
   }
 
   & .desc {
-    overflow-y: scroll;
     padding: 2rem;
     grid-area: desc;
     background-color: var(--white);
     
     & .category {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
 
       & p {
         margin-bottom: 0;
@@ -111,10 +123,34 @@ const StyledLightBox = styled.div`
       }
 
       & .prompt {
-        font-weight: var(--heavy-weight);
+        margin-bottom: 0.5rem;
+
+        & > span:first-child {
+          font-weight: var(--heavy-weight);
+        }
       }
     }
   }
 `
+
+LightBox.propTypes = {
+  title: PropTypes.string,
+  logline: PropTypes.string,
+  video: PropTypes.string,
+  creators: PropTypes.array,
+  actors: PropTypes.array,
+  awards: PropTypes.array,
+  prompts: PropTypes.object,
+}
+
+LightBox.defaultProps = {
+  title: '',
+  logline: '',
+  video: '',
+  creators: [],
+  actors: [],
+  awards: [],
+  prompts: {},
+}
 
 export default LightBox

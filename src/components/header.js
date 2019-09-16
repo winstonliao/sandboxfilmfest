@@ -8,7 +8,7 @@ import logo from '../images/logo.png'
 const Header = ({ siteTitle }) => (
   <StyledHeader>
     <div class='left'>
-      <Link to='#hero'>
+      <Link to='/#hero'>
         <img src={logo} alt='logo' className='logo'></img>
         <p className='title'>{siteTitle.toUpperCase()}</p>
       </Link>
@@ -16,11 +16,11 @@ const Header = ({ siteTitle }) => (
     
     <div class='right'>
       <nav>
-        <Link to='#how_it_works'>HOW IT WORKS</Link>
-        <Link to='#watch'>WATCH</Link>
-        <Link to='#about'>ABOUT</Link>
-        <Link to='#sign_up'>SIGN UP</Link>
-        <Link to='#contact'>CONTACT</Link>
+        <Link to='/#how_it_works'>HOW IT WORKS</Link>
+        <Link to='/#watch'>WATCH</Link>
+        <Link to='/#about'>ABOUT</Link>
+        <Link to='/#sign_up'>SIGN UP</Link>
+        <Link to='/#contact'>CONTACT</Link>
       </nav>
     </div>
   </StyledHeader>

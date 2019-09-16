@@ -6,8 +6,8 @@ import SplitLayout from '../components/splitLayout'
 import Paragraph from '../components/paragraph'
 import ParagraphContainer from '../components/paragraphContainer'
 
-const HowItWorksSection = () => (
-	<StyledHowItWorksSection>
+const HowItWorksSection = ({ id }) => (
+	<StyledHowItWorksSection id={id}>
 		<SplitLayout
 			left = {
 				<div className='title-wrapper'>

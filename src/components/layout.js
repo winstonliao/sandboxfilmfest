@@ -14,6 +14,11 @@ import Footer from "./footer"
 import "../styles/layout.css"
 import '../styles/vars.css'
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

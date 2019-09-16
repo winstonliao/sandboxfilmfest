@@ -6,8 +6,8 @@ import SplitLayout from '../components/splitLayout'
 import Carousel from '../components/carousel'
 import ProfileItem from '../components/profileItem'
 
-const AboutSection = () => (
-	<StyledAboutSection>
+const AboutSection = ({ id }) => (
+	<StyledAboutSection id={id}>
 		<SplitLayout
 			left = {
 				<div className='title-wrapper'>

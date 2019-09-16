@@ -26,7 +26,7 @@ class Hero extends Component {
 
 	render() {
     return(
-			<StyledHero>
+			<StyledHero id={this.props.id}>
         <div className='text'>
           <p className='subtitle'>STANFORD UNIVERSITY'S</p>
           <p className='title'>SANDBOX FILM FEST</p>

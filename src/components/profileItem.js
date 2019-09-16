@@ -8,7 +8,7 @@ const ProfileItem = ({ image, name, bio, linkName, link }) => (
     <div class='text'>
       <p className='name'>{ name }</p>
       <p className='bio'>{ bio }</p>
-      <a href={ link }>{ linkName }</a>
+      <a href={ link } target='_blank'>{ linkName } 🡕</a>
     </div>
 	</StyledProfileItem>
 )

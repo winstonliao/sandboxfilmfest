@@ -8,7 +8,7 @@ class Modal extends Component {
     this.clickHandler = this.clickHandler.bind(this);
   }
 
-  clickHandler= event => {
+  clickHandler = event => {
     event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation();
   }
@@ -18,7 +18,7 @@ class Modal extends Component {
       <StyledModal>
         <div className={this.props.showModal ? 'overlay active' : 'overlay'} onClick={this.props.clickHandler}>
           <div className='modal' onClick={this.clickHandler}>
-            <a id='x' onClick={this.props.clickHandler}>x</a>
+            <a id='x' onClick={this.props.clickHandler}>×</a>
             {this.props.children}
           </div>
         </div>
@@ -65,6 +65,7 @@ const StyledModal = styled.div`
 
         background-color: var(--white);
         color: var(--black);
+        position: absolute;
 
         -webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.3);
         -moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.3);

@@ -18,6 +18,7 @@ class watchSection extends Component {
       showModal: false,
     };
     this.modalHandler = this.modalHandler.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
     this.year2019 = React.createRef();
     this.year2018 = React.createRef();
   }
@@ -29,12 +30,22 @@ class watchSection extends Component {
   }
 
   modalHandler(film) {
-    console.log(film)
     this.setState(state => ({
       showModal: !state.showModal,
       film: film,
       })
     );
+    this.toggleScroll();
+  }
+
+  clickHandler() {
+    this.setState(state => ({
+      showModal: !state.showModal,
+    }));
+    this.toggleScroll();
+  }
+
+  toggleScroll() {
     setTimeout(() => {
       document.body.style.overflowY = this.state.showModal ? 'hidden' : 'scroll';
     }, 500);
@@ -42,7 +53,7 @@ class watchSection extends Component {
 
 	render() {
     return(
-			<StyledwatchSection>
+			<StyledwatchSection id={this.props.id}>
         <SplitLayout
           left={
             <div className='title-wrapper'>
@@ -62,7 +73,7 @@ class watchSection extends Component {
           }
         >
         </SplitLayout>
-        <Modal showModal={this.state.showModal}>
+        <Modal showModal={this.state.showModal} clickHandler={this.clickHandler}>
           <LightBox {...this.state.film}></LightBox>
         </Modal>
 			</StyledwatchSection>
@@ -133,7 +144,7 @@ const films = [
     title: 'Firestruck',
     image: '',
     year: 2019,
-    video: '',
+    video: 'https://www.youtube.com/embed/YlBkoGocaQo',
     logline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     awards: ['Best Screenplay'],
     creators: ['Winston Liao', 'Robert Muni', 'Kati Uyemura', 'Erika DePalatis'],

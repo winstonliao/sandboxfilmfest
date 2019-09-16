@@ -5,6 +5,7 @@ import SingleLayout from '../components/singleLayout'
 import Input from '../components/input'
 import Button from '../components/button'
 import Modal from '../components/modal'
+import MessageBox from '../components/messageBox'
 
 class ContactSection extends Component {
 
@@ -78,7 +79,7 @@ class ContactSection extends Component {
 
 	render() {
     return(
-			<StyledContactSection>
+			<StyledContactSection id={this.props.id}>
 				<SingleLayout>
 					<p className='title'>CONTACT</p>
           <Input name='name' label='NAME' placeholder='Name' color='var(--black)' isLong={ false }></Input>
@@ -87,8 +88,7 @@ class ContactSection extends Component {
 					<Button name='SUBMIT' color='var(--black)' bgColor='var(--white)' onClick={ this.submitHandler }></Button>
 				</SingleLayout>
 				<Modal showModal={this.state.showModal} clickHandler={this.modalHandler}>
-          <h2>Thanks!</h2>
-          <p>We've recieved your message. We'll get back to you as soon as we can.</p>
+          <MessageBox headline='Thanks!' message="We've received your message. We'll get back to you as soon as we can."></MessageBox>
         </Modal>
 			</StyledContactSection>
 		)
