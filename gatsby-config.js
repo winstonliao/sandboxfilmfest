@@ -37,7 +37,7 @@ module.exports = {
           },
           {
             family: `Playfair Display`,
-            variants: [`900`],
+            variants: [`400i`,`900`],
           },
         ],
       },

@@ -1,12 +1,20 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 
-const Carousel = ({ children, isLight }) => (
-	<StyledCarousel isLight={isLight}>
-    {children}
-	</StyledCarousel>
-)
+class Carousel extends Component {
+  constructor(props) {
+		super(props);
+	}
+
+	render() {
+    return (
+			<StyledCarousel isLight={this.props.isLight}>
+				{this.props.children}
+			</StyledCarousel>
+		)
+	}
+}
 
 const StyledCarousel = styled.div`
 	height: 100%;

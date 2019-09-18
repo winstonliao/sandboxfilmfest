@@ -67,6 +67,7 @@ const StyledHero = styled.div`
       margin-bottom: 5rem;
 
       font-family: var(--display-font);
+      font-weight: var(--display-weight);
       font-size: var(--display);
     }
 

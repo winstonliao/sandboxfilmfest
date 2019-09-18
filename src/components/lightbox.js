@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-const LightBox = ({ title, logline, video, creators, actors, awards, prompts }) => (
+const LightBox = ({ title, year, logline, video, creators, actors, awards, prompts }) => (
   <StyledLightBox>
     <div className='lightbox'>
       <div className='video'>
@@ -11,7 +11,7 @@ const LightBox = ({ title, logline, video, creators, actors, awards, prompts }) 
         </div>
       </div>
       <div className='main-info'>
-        <p className='title'>{ title.toUpperCase() }</p >
+        <p className='title'>{ title.toUpperCase() } <span>{ year }</span></p>
         <p className='logline'>{ logline }</p>
       </div>
       <div className='desc'>
@@ -91,7 +91,13 @@ const StyledLightBox = styled.div`
 
     & .title {
       font-family: var(--display-font);
+      font-weight: var(--display-weight);
       font-size: var(--larger);
+
+      & > span {
+        font-style: italic;
+        font-weight: var(--light-weight);
+      }
     }
 
     & .logline {

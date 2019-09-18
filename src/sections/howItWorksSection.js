@@ -49,6 +49,7 @@ const StyledHowItWorksSection = styled.div`
 
 			color: var(--black);
 			font-family: var(--display-font);
+			font-weight: var(--display-weight);
 			font-size: var(--display);
 		}
 	}

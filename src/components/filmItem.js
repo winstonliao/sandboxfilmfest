@@ -1,12 +1,20 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import PropTypes from "prop-types"
+import React, {Component} from 'react'
 import styled from 'styled-components'
 
-const FilmItem = ({image, title, year, onClick}) => (
-	<StyledFilmItem image={image} year={year} onClick={onClick}>
-    <span>{ title.toUpperCase() }</span>
-	</StyledFilmItem>
-)
+class FilmItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <StyledFilmItem image={this.props.image} id={this.props.year} year={this.props.year} onClick={this.props.onClick}>
+        <span>{ this.props.title.toUpperCase() }</span>
+      </StyledFilmItem>
+    )
+  }
+}
 
 const StyledFilmItem = styled.div`
 
@@ -28,6 +36,7 @@ const StyledFilmItem = styled.div`
     line-height: 2.25rem;
 
     font-family: var(--display-font);
+    font-weight: var(--display-weight);
     font-size: var(--larger);
     color: var(--white);
   }

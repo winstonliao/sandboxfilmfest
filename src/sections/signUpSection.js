@@ -99,7 +99,8 @@ const StyledSignUpSection = styled.div`
 
 	& .title {
 		text-align: center;
-		font-family: var(--display-font);
+    font-family: var(--display-font);
+    font-weight: var(--display-weight);
 		font-size: var(--display);
 		margin-bottom: 4rem;
 	}
