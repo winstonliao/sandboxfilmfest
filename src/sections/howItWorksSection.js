@@ -44,7 +44,6 @@ const StyledHowItWorksSection = styled.div`
 		height: 100%;
 
 		& .title {
-			padding-left: 10rem;
 			line-height: 6rem;
 
 			color: var(--black);
@@ -53,6 +52,17 @@ const StyledHowItWorksSection = styled.div`
 			font-size: var(--display);
 		}
 	}
+
+	@media (max-width: 1024px) {
+		& .title-wrapper {
+			background-color: var(--black);
+			border: none;
+
+			& .title {
+				color: var(--white);
+			}
+		}
+  }
 `
 
 HowItWorksSection.propTypes = {

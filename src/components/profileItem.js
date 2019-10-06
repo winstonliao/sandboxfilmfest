@@ -4,62 +4,82 @@ import styled from 'styled-components'
 
 const ProfileItem = ({ image, name, bio, linkName, link }) => (
 	<StyledProfileItem image={ image }>
-    <div className='image-wrapper'><div className='image'></div></div>
-    <div class='text'>
-      <p className='name'>{ name }</p>
-      <p className='bio'>{ bio }</p>
-      <a href={ link } target='_blank'>{ linkName } 🡕</a>
+    <div className='wrapper'>
+      <div className='image-wrapper'><div className='image'></div></div>
+      <div class='text'>
+        <p className='name'>{ name }</p>
+        <p className='bio'>{ bio }</p>
+        <a href={ link } target='_blank'>{ linkName } 🡕</a>
+      </div>
     </div>
 	</StyledProfileItem>
 )
 
 const StyledProfileItem = styled.div`
-  position: relative;
-  height: 25rem;
+  & .wrapper {
+    position: relative;
+    height: 25rem;
 
-  color: var(--white);
+    color: var(--white);
 
-  & .image-wrapper {
-    position: absolute;
-    right: 0;
-    width: 15rem;
+    & .image-wrapper {
+      position: absolute;
+      right: 0;
+      width: 15rem;
 
-    & .image {
-      overflow: hidden;
-      height: 0;
-      padding-top: 100%;
-      
-      background-color: var(--dark-grey);
-      background-image: url('${props => props.image}');
+      & .image {
+        overflow: hidden;
+        height: 0;
+        padding-top: 100%;
+        
+        background-color: var(--dark-grey);
+        background-image: url('${props => props.image}');
+      }
+    }
+
+    & .text {
+      position: relative;
+      top: 10rem;
+      left: 0;
+
+      & .name {
+        top: 20rem;
+        margin-bottom: 0.5rem;
+        
+        font-size: var(--medium);
+        font-weight: var(--heavy-weight);
+      }
+
+      & .bio {
+        top: 30rem;
+        margin-right: 5rem;
+        
+        font-size: var(--small);
+        font-weight: var(--medium-weight);
+        line-height: 1rem;
+      }
+    
+      & a {
+        font-weight: var(--heavy-weight);
+        color: var(--white);
+        text-decoration: none;
+      }
     }
   }
 
-  & .text {
-    position: relative;
-    top: 10rem;
-    left: 0;
+  @media (max-width: 1024px) {
 
-    & .name {
-      top: 20rem;
-      margin-bottom: 0.5rem;
-      
-      font-size: var(--medium);
-      font-weight: var(--heavy-weight);
-    }
+    & .wrapper {
+      width: 30rem;
 
-    & .bio {
-      top: 30rem;
-      margin-right: 5rem;
-      
-      font-size: var(--small);
-      font-weight: var(--medium-weight);
-      line-height: 1rem;
-    }
-   
-    & a {
-      font-weight: var(--heavy-weight);
-      color: var(--white);
-      text-decoration: none;
+      & .text {
+        top: 10rem;
+        white-space: normal;
+      }
+
+      & .image {
+        display: block;
+      }
     }
   }
 `

@@ -9,7 +9,7 @@ class Carousel extends Component {
 
 	render() {
     return (
-			<StyledCarousel isLight={this.props.isLight}>
+			<StyledCarousel isLight={this.props.isLight} onScroll={ this.props.scrollHandler }>
 				{this.props.children}
 			</StyledCarousel>
 		)
@@ -21,7 +21,7 @@ const StyledCarousel = styled.div`
 	overflow-y: scroll;
 
 	& > div {
-		margin: 0 2.5rem 5rem 0;
+		margin: 0 2.5rem 2.5rem 0;
 
 		& :last-child {
 			margin-bottom: 0;
@@ -35,6 +35,22 @@ const StyledCarousel = styled.div`
 	& ::-webkit-scrollbar-thumb {
 		background-color: ${props => props.isLight ? 'var(--black)' : 'var(--white)'};
 	}
+
+	@media (max-width: 1024px) {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+
+		& div {
+			display: inline-block;
+		}
+
+		& > div {
+			& :last-child {
+				margin-right: 0;
+			}
+		}
+  }
 `
 
 Carousel.propTypes = {

@@ -15,7 +15,7 @@ const StyledParagraphContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;		
-  padding: 10rem 10rem;
+  padding: 10rem;
 
   background-color: var(--black);
   color: var(--white);

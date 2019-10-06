@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import MediaQuery from 'react-responsive'
 
 class Hero extends Component {
 
   constructor() {
     super();
     this.state = {
-      action: '',
       actions: ['WRITE', 'SHOOT', 'DIRECT', 'EDIT'],
+      action: 'WRITE',
     };
   }
 
@@ -29,12 +30,13 @@ class Hero extends Component {
 			<StyledHero id={this.props.id}>
         <div className='text'>
           <p className='subtitle'>STANFORD UNIVERSITY'S</p>
-          <p className='title'>SANDBOX FILM FEST</p>
+          <p className='title'>SANDBOX <MediaQuery query="(max-width: 1023.98px)"><br></br></MediaQuery>FILM FEST</p>
           <div>
             <div className='actionOuter'><span className='actionInner'>{this.state.action}</span></div>
-            <span className='actionAfter'>&nbsp;A MOVIE IN 48 HOURS</span>
+            <span className='actionAfter'>&nbsp;A MOVIE <MediaQuery query="(max-width: 767.98px)"><br></br></MediaQuery> IN 48 HOURS</span>
           </div>
         </div>
+        <div className='opacity'></div>
 			</StyledHero>
 		)
 	}
@@ -47,7 +49,25 @@ const StyledHero = styled.div`
   padding-top: 50vh;
   padding-left: 15vw;
 
+  background-image: url('../images/film.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+
+  & .opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.85;
+  }
+
   & .text {
+    position: absolute;
+    z-index: 2;
     display: inline;    
 
     & span {
@@ -56,7 +76,7 @@ const StyledHero = styled.div`
     }
 
     & .subtitle {
-      margin-bottom: 2rem;
+      margin-bottom: 0;
       padding-left: 0.25rem;
 
       font-size: var(--medium);
@@ -64,7 +84,8 @@ const StyledHero = styled.div`
     }
 
     & .title {
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
+      line-height: 5rem;
 
       font-family: var(--display-font);
       font-weight: var(--display-weight);
@@ -78,6 +99,10 @@ const StyledHero = styled.div`
 
     & .actionInner {
       border-bottom: solid 4px var(--yellow);
+    }
+
+    & .actionAfter {
+      line-height: 3.5rem;
     }
   }
 `

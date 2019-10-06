@@ -14,7 +14,28 @@ const StyledSingleLayout = styled.div`
   display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 10vh 25vw;
+	padding: 10rem 25rem;
+
+	@media (max-width: 1399.98px) {
+
+  }
+
+  @media (max-width: 1024px) {
+    padding: 10rem 15rem;
+    height: auto;		
+  }
+
+  @media (max-width: 907.98px) {
+		
+  }
+
+  @media (max-width: 767.98px) {
+		padding: 10rem 10rem;
+  }
+
+  @media (max-width: 575.98px) {
+    padding: 10rem 5rem;
+  }
 `
 
 SingleLayout.propTypes = {

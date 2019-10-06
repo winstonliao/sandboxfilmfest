@@ -8,18 +8,19 @@ import FilmItem from '../components/filmItem'
 import Modal from '../components/modal'
 import LightBox from '../components/lightBox'
 
-class watchSection extends Component {
+class WatchSection extends Component {
 
   constructor() {
     super();
     this.state = {
-      year: '',
+      year: 2019,
       film: films[0],
       showModal: false,
     };
     this.modalHandler = this.modalHandler.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
     this.yearHandler = this.yearHandler.bind(this);
+    this.scrollHandler = this.scrollHandler.bind(this);
     this.year2019 = React.createRef();
     this.year2018 = React.createRef();
     this.carousel = React.createRef();
@@ -29,11 +30,13 @@ class watchSection extends Component {
     }, {});
   }
 
-  componentDidMount() {
-    this.setState(state => ({
-      year: '2019',
-    }))
-  }
+  // componentDidMount() {
+  //   this.carousel.addEventListener("scroll", this.scrollHandler);
+  // }
+
+  // componentWillUnmount() {
+  //   this.carousel.removeEventListener("scroll", this.scrollHandler);
+  // }
 
   modalHandler(film) {
     this.setState(state => ({
@@ -52,8 +55,32 @@ class watchSection extends Component {
   }
 
   yearHandler(year) {
-    const index = Array.from(this.carousel.current.props.children).findIndex( film => film.props.year == year );
+    const index = Array.from(this.carousel.current.props.children).findIndex( film => film.props.year === year );
+    this.setState(state => ({
+      year: year,
+    }));
     ReactDOM.findDOMNode(this.filmRefs[index].current).scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  }
+
+  scrollHandler() {
+    console.log('scroll');
+
+    let yearPos = {};
+    Array.from(this.carousel.current.props.children).reverse().map( (film, i) => {
+      yearPos[film.year] = ReactDOM.findDOMNode(this.filmRefs[i].current).offsetTop;
+    });
+
+    console.log(this.carousel.offsetTop);
+    console.log(yearPos);
+
+    yearPos.keys().map(Number).forEach( year => {
+      if(this.carousel.scrollTop >= yearPos[year]) {
+        this.setState(state => ({
+          year: year,
+        }));
+        return;
+      }
+    });
   }
 
   toggleScroll() {
@@ -64,18 +91,18 @@ class watchSection extends Component {
 
 	render() {
     return(
-			<StyledwatchSection id={this.props.id}>
+			<StyledWatchSection id={this.props.id}>
         <SplitLayout
           left={
             <div className='title-wrapper'>
               <span>WATCH</span>
-              <span className={this.state.year == 2019 ? 'underline' : ''} ref={this.year2019} onClick={ () => this.yearHandler(2019) }>2019</span>
-              <span className={this.state.year == 2018 ? 'underline' : ''} ref={this.year2018} onClick={ () => this.yearHandler(2018) }>2018</span>
+              <span className={this.state.year === 2019 ? 'underline' : ''} ref={this.year2019} onClick={ () => this.yearHandler(2019) }>2019</span>
+              <span className={this.state.year === 2018 ? 'underline' : ''} ref={this.year2018} onClick={ () => this.yearHandler(2018) }>2018</span>
             </div>
           }
           right={
             <div className='carousel-wrapper'>
-              <Carousel ref={this.carousel} isLight={true}>
+              <Carousel ref={this.carousel} isLight={true} onScroll={ this.scrollHandler }>
                 {films.map((film, i) => (
                   <FilmItem key={i} ref={this.filmRefs[i]} {...film} onClick={ () => this.modalHandler(film) }></FilmItem>
                 ))}
@@ -87,12 +114,12 @@ class watchSection extends Component {
         <Modal showModal={this.state.showModal} clickHandler={this.clickHandler}>
           <LightBox {...this.state.film}></LightBox>
         </Modal>
-			</StyledwatchSection>
+			</StyledWatchSection>
 		)
 	}
 }
 
-const StyledwatchSection = styled.div`
+const StyledWatchSection = styled.div`
 	& .title-wrapper {
     display: flex;
     flex-direction: column;
@@ -100,25 +127,57 @@ const StyledwatchSection = styled.div`
 		height: 100%;
 
 		& > span {
+      position: relative;
       margin-right: auto;
-			margin-left: 10rem;
 			line-height: 6rem;
       text-decoration: none;
 
 			color: var(--black);
       font-family: var(--display-font);
       font-weight: var(--display-weight);
-			font-size: var(--display);
-		}
+      font-size: var(--display);
 
-    & .underline {
-      border-bottom: solid 8px var(--yellow);
-    }
+      &:before {
+        content: '';
+        position: absolute;
+        height: 0;
+        left: 0;
+        bottom: -8px;
+        width: 0;
+        border-bottom: solid 8px var(--yellow);
+        transition: width ease-in-out 0.2s;
+      }
+
+      &.underline:before {
+        width: 100%;
+      }
+		}
 	}
 
   & .carousel-wrapper {
-    height: 100vh;
     padding: 10rem 5rem 10rem 0;
+  }
+
+  @media (max-width: 1024px) {
+		& .title-wrapper {
+			background-color: var(--white);
+		
+			& .title, .desc {
+				color: var(--black);
+			}
+		}
+
+    & .carousel-wrapper {
+      padding: 10rem;
+      height: 45.5rem;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    & .carousel-wrapper {
+      padding: 10rem 5rem;
+      height: 40rem;
+    }
   }
 `
 
@@ -167,7 +226,35 @@ const films = [
       quote: 'Love is friendship set on fire.',
     }
   },
+  {
+    title: 'TEST',
+    image: '',
+    year: 2018,
+    video: 'https://www.youtube.com/embed/YlBkoGocaQo',
+    logline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    awards: ['Best Screenplay'],
+    creators: ['Winston Liao', 'Robert Muni', 'Kati Uyemura', 'Erika DePalatis'],
+    actors: ['Kiko Ilagan', 'Katiana Uyemura'],
+    prompts: {
+      image: 'Lady Gaga at with a long, white flowing gown',
+      quote: 'Love is friendship set on fire.',
+    }
+  },
+  {
+    title: 'TEST',
+    image: '',
+    year: 2018,
+    video: 'https://www.youtube.com/embed/YlBkoGocaQo',
+    logline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    awards: ['Best Screenplay'],
+    creators: ['Winston Liao', 'Robert Muni', 'Kati Uyemura', 'Erika DePalatis'],
+    actors: ['Kiko Ilagan', 'Katiana Uyemura'],
+    prompts: {
+      image: 'Lady Gaga at with a long, white flowing gown',
+      quote: 'Love is friendship set on fire.',
+    }
+  },
 ]
 
 
-export default watchSection
+export default WatchSection

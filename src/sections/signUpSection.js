@@ -104,6 +104,12 @@ const StyledSignUpSection = styled.div`
 		font-size: var(--display);
 		margin-bottom: 4rem;
 	}
+
+  @media (max-width: 1024px) {
+    & > div {
+      height: auto;
+    }
+  }
 `
 
 export default SignUpSection

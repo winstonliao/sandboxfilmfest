@@ -10,35 +10,56 @@ class FilmItem extends Component {
   render() {
     return (
       <StyledFilmItem image={this.props.image} id={this.props.year} year={this.props.year} onClick={this.props.onClick}>
-        <span>{ this.props.title.toUpperCase() }</span>
+        <div class='wrapper'>
+          <span>{ this.props.title.toUpperCase() }</span>
+        </div>
       </StyledFilmItem>
     )
   }
 }
 
 const StyledFilmItem = styled.div`
+  top: 0;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  & .wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
-  overflow: hidden;
-  height: 0;
-  padding-top: 56.25%;
+    overflow: hidden;
+    height: 0;
+    padding-top: 56.25%;
 
-  cursor: pointer;
-  background-image: url('${props => props.image}');
-  background-color: var(--black);
+    cursor: pointer;
+    background-image: url('${props => props.image}');
+    background-color: var(--black);
 
-  & span {
-    display: inline-block;
-    margin: 3rem;
-    line-height: 2.25rem;
+    & span {
+      display: inline-block;
+      margin: 3rem;
+      line-height: 2.25rem;
 
-    font-family: var(--display-font);
-    font-weight: var(--display-weight);
-    font-size: var(--larger);
-    color: var(--white);
+      font-family: var(--display-font);
+      font-weight: var(--display-weight);
+      font-size: var(--larger);
+      color: var(--white);
+    }
+  }
+
+	@media (max-width: 1024px) {
+    & .wrapper { 
+      width: 40rem;
+    }
+
+    & span {
+      white-space: normal;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    & .wrapper { 
+      width: 30rem;
+    }
   }
 `
 

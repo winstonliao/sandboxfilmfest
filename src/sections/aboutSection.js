@@ -59,10 +59,6 @@ const StyledAboutSection = styled.div`
 		justify-content: center;
 		height: 100%;
 
-		& .title, .desc {
-			padding: 0 10rem;
-		}
-
 		& .title {
 			line-height: 6rem;
 
@@ -77,6 +73,27 @@ const StyledAboutSection = styled.div`
     height: 100vh;
     padding: 10rem 5rem 10rem 10rem;
 		background-color: var(--black);
+	}
+	
+	@media (max-width: 1024px) {
+		& .title-wrapper {
+			background-color: var(--black);
+		
+			& .title, .desc {
+				color: var(--white);
+			}
+		}
+
+		& .carousel-wrapper {
+      padding: 10rem;
+      height: 45rem;
+    }
+	}
+	
+	@media (max-width: 767.98px) {
+    & .carousel-wrapper {
+      padding: 10rem 5rem;
+    }
   }
 `
 

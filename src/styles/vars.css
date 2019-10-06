@@ -24,6 +24,12 @@
   --width-small: 75%;
 }
 
+@media (max-width: 1399.98px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 907.98px) {
   :root {
     font-size: 14px;
