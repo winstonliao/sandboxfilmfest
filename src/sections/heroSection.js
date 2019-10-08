@@ -105,6 +105,26 @@ const StyledHero = styled.div`
       line-height: 3.5rem;
     }
   }
+
+  @media (max-width: 413.98px) {
+    padding-left: 3rem;
+
+    & .text {
+
+      & .title {
+        margin-bottom: 1.5rem;
+        line-height: 4rem;
+      }
+    
+      & > div {
+        font-size: var(--small);
+      }
+
+      & .actionAfter {
+        line-height: 2.75rem;
+      }
+    }
+  }
 `
 
 export default Hero

@@ -137,6 +137,8 @@ const StyledWatchSection = styled.div`
       font-weight: var(--display-weight);
       font-size: var(--display);
 
+      cursor: pointer;
+
       &:before {
         content: '';
         position: absolute;
@@ -169,14 +171,19 @@ const StyledWatchSection = styled.div`
 
     & .carousel-wrapper {
       padding: 10rem;
-      height: 45.5rem;
+      height: auto;
     }
   }
 
   @media (max-width: 767.98px) {
     & .carousel-wrapper {
       padding: 10rem 5rem;
-      height: 40rem;
+    }
+  }
+
+  @media (max-width: 412.98px) {
+    & .carousel-wrapper {
+      padding: 10rem 3rem;
     }
   }
 `

@@ -55,7 +55,7 @@ class Header extends Component {
                   <Link to='/#watch'>WATCH</Link>
                   <Link to='/#about'>ABOUT</Link>
                   <Link to='/#sign_up'>SIGN UP</Link>
-                  <Link to='/#contact/'>CONTACT</Link>
+                  <Link to='/#contact'>CONTACT</Link>
                 </nav>
                 <div className='cover'></div>
               </div>
@@ -85,7 +85,7 @@ const StyledHeader = styled.header`
   font-weight: var(--medium-weight);
 
   & div {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 
   & a {
@@ -181,6 +181,12 @@ const StyledHeader = styled.header`
       position: absolute;
       right: 0;
       width: 100vw;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    & a {
+      padding: 0;
     }
   }
 `

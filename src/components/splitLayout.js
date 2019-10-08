@@ -67,6 +67,12 @@ const StyledSplitLayout = styled.div`
       padding: 10rem 5rem;
     } 
   }
+
+  @media (max-width: 413.98px) {
+    & > div > div {
+      padding: 10rem 3rem;
+    } 
+  }
 `
 
 SplitLayout.propTypes = {

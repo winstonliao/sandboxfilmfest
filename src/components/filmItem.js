@@ -19,7 +19,7 @@ class FilmItem extends Component {
 }
 
 const StyledFilmItem = styled.div`
-  top: 0;
+  cursor: pointer;
 
   & .wrapper{
     display: flex;
@@ -29,8 +29,7 @@ const StyledFilmItem = styled.div`
     overflow: hidden;
     height: 0;
     padding-top: 56.25%;
-
-    cursor: pointer;
+    
     background-image: url('${props => props.image}');
     background-color: var(--black);
 
@@ -59,6 +58,18 @@ const StyledFilmItem = styled.div`
   @media (max-width: 767.98px) {
     & .wrapper { 
       width: 30rem;
+    }
+  }
+
+  @media (max-width: 413.98px) {
+    & .wrapper { 
+      width: 20rem;
+
+      & span {
+        margin: 1.5rem 2rem;
+        line-height: 1.5rem;
+        font-size: var(--medium);
+      }
     }
   }
 `

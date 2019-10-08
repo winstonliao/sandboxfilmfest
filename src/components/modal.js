@@ -81,22 +81,6 @@ const StyledModal = styled.div`
       }
     }
   }
-
-  @media (max-width: 767.98px) {
-
-    & .overlay.active .modal {
-      width: 90%;
-      max-width: 30rem;
-    }
-  }
-
-  @media (max-width: 349.98px) {
-
-    & .overlay.active .modal {
-      padding: 2rem;
-      padding-top: 3rem;
-    }
-  }
 `
 
 Modal.propTypes = {

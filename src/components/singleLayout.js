@@ -36,6 +36,10 @@ const StyledSingleLayout = styled.div`
   @media (max-width: 575.98px) {
     padding: 10rem 5rem;
   }
+
+  @media (max-width: 413.98px) {
+    padding: 10rem 3rem;
+  }
 `
 
 SingleLayout.propTypes = {

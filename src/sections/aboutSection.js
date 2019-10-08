@@ -86,13 +86,19 @@ const StyledAboutSection = styled.div`
 
 		& .carousel-wrapper {
       padding: 10rem;
-      height: 45rem;
+      height: auto;
     }
 	}
 	
 	@media (max-width: 767.98px) {
     & .carousel-wrapper {
       padding: 10rem 5rem;
+    }
+	}
+	
+	@media (max-width: 412.98px) {
+    & .carousel-wrapper {
+      padding: 10rem 3rem;
     }
   }
 `

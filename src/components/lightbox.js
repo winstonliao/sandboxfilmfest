@@ -15,25 +15,25 @@ const LightBox = ({ title, year, logline, video, creators, actors, awards, promp
         <p className='logline'>{ logline }</p>
       </div>
       <div className='desc'>
-        <div className='category'>
+        <div className='category' id='creators'>
           <p>CREATED BY</p>
           {Array.from(creators).map((creator, i) => (
             <p key={i}>{ creator }</p>
           ))}
         </div>
-        <div className='category'>
+        <div className='category' id='actors'>
           <p>STARRING</p>
           {Array.from(actors).map((actor, i) => (
             <p key={i}>{ actor }</p>
           ))}
         </div>
-        <div className='category'>
+        <div className='category' id='awards'>
           <p>AWARDS 🏆</p>
           {Array.from(awards).map((award, i) => (
             <p key={i}>{ award }</p>
           ))}
         </div>
-        <div className='category'>
+        <div className='category' id='prompts'>
           <p>PROMPTS</p>
           {Object.keys(prompts).map((prompt, i) => (
             <p className='prompt'>
@@ -136,6 +136,58 @@ const StyledLightBox = styled.div`
         }
       }
     }
+  }
+
+  @media (max-width: 1024px) {
+    & .lightbox {
+      height: auto;
+      width: 75vw;
+
+      display: flex;
+      grid-template-rows: auto;
+      flex-direction: column;
+    }
+
+    & .main-info {
+      color: var(--black);
+      background-color: var(--white);
+      padding-bottom: 0;
+
+      & .title {
+        line-height: 2.5rem;
+      }
+    }
+
+    & .desc {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+        'creators actors'
+        'prompts awards'
+    }
+
+    & #creators {
+      grid-area: 'creators';
+    }
+
+    & #actors {
+      grid-area: 'actors';
+    }
+
+    & #prompts {
+      grid-area: 'prompts';
+      margin-bottom: 0;
+    }
+
+    & #awards {
+      grid-area: 'awards';
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    
   }
 `
 

@@ -24,20 +24,21 @@
   --width-small: 75%;
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1023.98px) {
   :root {
     font-size: 14px;
   }
 }
 
-@media (max-width: 907.98px) {
+@media (max-width: 767.98px) {
   :root {
     font-size: 14px;
   }
 }
 
-@media (max-width: 399.98px) {
+@media (max-width: 413.98px) {
   :root {
     font-size: 12px;
+    --display: 4em;
   }
 }

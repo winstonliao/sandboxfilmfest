@@ -18,7 +18,7 @@ const ProfileItem = ({ image, name, bio, linkName, link }) => (
 const StyledProfileItem = styled.div`
   & .wrapper {
     position: relative;
-    height: 25rem;
+    height: auto;
 
     color: var(--white);
 
@@ -29,6 +29,7 @@ const StyledProfileItem = styled.div`
 
       & .image {
         overflow: hidden;
+        width: 100%;
         height: 0;
         padding-top: 100%;
         
@@ -39,7 +40,7 @@ const StyledProfileItem = styled.div`
 
     & .text {
       position: relative;
-      top: 10rem;
+      padding-top: 10rem;
       left: 0;
 
       & .name {
@@ -70,16 +71,21 @@ const StyledProfileItem = styled.div`
   @media (max-width: 1024px) {
 
     & .wrapper {
-      width: 30rem;
+      width: 25rem;
 
       & .text {
-        top: 10rem;
         white-space: normal;
       }
 
       & .image {
         display: block;
       }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    & .wrapper {
+      width: 22rem;
     }
   }
 `
