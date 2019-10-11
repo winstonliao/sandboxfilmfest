@@ -35,6 +35,7 @@ const StyledProfileItem = styled.div`
         
         background-color: var(--dark-grey);
         background-image: url('${props => props.image}');
+        background-size: cover;
       }
     }
 
@@ -58,6 +59,8 @@ const StyledProfileItem = styled.div`
         font-size: var(--small);
         font-weight: var(--medium-weight);
         line-height: 1rem;
+
+        text-shadow: 0 0 3px var(--black);
       }
     
       & a {
