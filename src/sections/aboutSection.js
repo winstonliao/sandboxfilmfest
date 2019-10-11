@@ -28,26 +28,20 @@ const AboutSection = ({ id }) => (
 	</StyledAboutSection>
 )
 
-const desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+const desc = 'The Sandbox Film Fest was started in 2018 with a goal of bringing together new and experienced filmmakers as well as empowering people to engage in collaborative creativity. With participation from over 30 students, the festival has produced six short films over two events.'
 
 const profiles = [
 	{
 		name: 'Winston Liao',
-		bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+		bio: 'Winston is a designer, engineer, and filmmaker based in the San Francisco Bay Area. He is currently studying mechatronics at Stanford University with the goal of developing technologies that facilitate joyful interaction and meaningful connections.',
 		link: 'http://winstonliao.com',
 		linkName: 'Portfolio',
 	},
 	{
 		name: 'Jack Virnich',
-		bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		link: 'http://winstonliao.com',
-		linkName: 'Portfolio',
-	},
-	{
-		name: 'Jason McRuer',
-		bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		link: 'http://winstonliao.com',
-		linkName: 'Portfolio',
+		bio: 'Jack is an experimental filmmaker from Denver, Colorado and a graduate of the Film & Media studies department at Stanford. Jack loves horror movies and the Japanese new wave. His favorite movie is Under the Skin.',
+		link: 'https://www.youtube.com/channel/UC7zIOtDEG2bHlPPH1qHIrzg',
+		linkName: 'YouTube',
 	},
 ]
 

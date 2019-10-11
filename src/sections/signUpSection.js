@@ -76,7 +76,7 @@ class SignUpSection extends Component {
 			<StyledSignUpSection id={this.props.id}>
 				<SingleLayout>
 					<p className='title'>SIGN UP</p>
-					<p className='desc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p className='desc'>We are planning more events in the future, most likely in early 2020. Please sign up below to be added to our mailing list so you can get announcements directly in your inbox!</p>
 					<Input name='email' label='EMAIL' placeholder='Email Address' color='var(--white)' isLong={ false }></Input>
 					<Button name='SUBMIT' color='var(--white)' bgColor='var(--yellow)' onClick={ this.submitHandler }></Button>
 				</SingleLayout>
