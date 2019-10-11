@@ -28,7 +28,7 @@ const AboutSection = ({ id }) => (
 	</StyledAboutSection>
 )
 
-const desc = 'The Sandbox Film Fest was started in 2018 with a goal of bringing together new and experienced filmmakers as well as empowering people to engage in collaborative creativity. With participation from over 30 students, the festival has produced six short films over two events.'
+const desc = 'The Sandbox Film Fest was started in 2018 with the goals of bringing together new and experienced filmmakers as well as empowering people to engage in collaborative creativity. With participation from over 30 students, the festival has produced six short films over two events.'
 
 const profiles = [
 	{
@@ -36,12 +36,14 @@ const profiles = [
 		bio: 'Winston is a designer, engineer, and filmmaker based in the San Francisco Bay Area. He is currently studying mechatronics at Stanford University with the goal of developing technologies that facilitate joyful interaction and meaningful connections.',
 		link: 'http://winstonliao.com',
 		linkName: 'Portfolio',
+		image: '../images/winston.jpg'
 	},
 	{
 		name: 'Jack Virnich',
 		bio: 'Jack is an experimental filmmaker from Denver, Colorado and a graduate of the Film & Media studies department at Stanford. Jack loves horror movies and the Japanese new wave. His favorite movie is Under the Skin.',
 		link: 'https://www.youtube.com/channel/UC7zIOtDEG2bHlPPH1qHIrzg',
 		linkName: 'YouTube',
+		image: '../images/jack.jpg'
 	},
 ]
 
