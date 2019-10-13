@@ -28,11 +28,11 @@ const HowItWorksSection = ({ id }) => (
 const paragraphs = [
 	{
 		title: 'Preparation & Kickoff',
-		text: 'Before the film fest, you can form your team of four or sign up to be matched with others. At the kickoff, your team will randomly pick prompts from a set of three categories. You have to use at least three of them in your film.',
+		text: 'Before the film fest, you can form your team of four or sign up to be matched with others. At the kickoff, your team will randomly pick prompts from a set of three categories. You have to use at least two of them in your film.',
 	},
 	{
 		title: 'Writing, Shooting, & Editing',
-		text: 'After kickoff, you have 48 hours to write, shoot, and edit your film. Your team members must be the main contributors to the creation of the film, and you may recruit actors and other crew members to help out!',
+		text: 'After kickoff, you have 48 hours to write, shoot, and edit your film. Your team members must be the main contributors to the creation of the film, though you may recruit actors and other crew members to help out!',
 	}
 ]
 

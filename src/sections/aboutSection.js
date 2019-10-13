@@ -28,7 +28,7 @@ const AboutSection = ({ id }) => (
 	</StyledAboutSection>
 )
 
-const desc = 'The Sandbox Film Fest was started in 2018 with the goals of bringing together new and experienced filmmakers as well as empowering people to engage in collaborative creativity. With participation from over 30 students, the festival has produced six short films over two events.'
+const desc = 'The Sandbox Film Fest was started in 2018 with the goal of empowering people to engage in collaborative creativity. With participation from over 30 students, both new and experienced, the festival has produced six short films over two events.'
 
 const profiles = [
 	{
