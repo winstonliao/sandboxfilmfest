@@ -111,6 +111,13 @@ const StyledContactSection = styled.div`
     font-weight: var(--display-weight);
 		font-size: var(--display);
 		margin-bottom: 4rem;
+  }
+
+  @media (max-width: 767.98px) {
+		& .title{
+			font-size: 4rem;
+			line-height: 1rem;
+		}
 	}
 `
 

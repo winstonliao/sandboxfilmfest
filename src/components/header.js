@@ -36,7 +36,7 @@ class Header extends Component {
         </div>
 
         <div class='right'>
-          <MediaQuery query="(min-width: 1023.98px)">      
+          <MediaQuery query="(min-width: 1024.02px)">      
             <nav>
               <Link to='/#how_it_works'>HOW IT WORKS</Link>
               <Link to='/#watch'>WATCH</Link>
@@ -46,7 +46,7 @@ class Header extends Component {
             </nav>
           </MediaQuery>
 
-          <MediaQuery query="(max-width: 1023.98px)">
+          <MediaQuery query="(max-width: 1024px)">
             <div className='mobile-nav'>
               <div className='nav-item dropdown'>
                 <p className='nav-title hamburger' onClick={this.hamburgerHandler}>{this.state.showMobileNav ? '✕' : '☰' }</p> 
@@ -69,7 +69,7 @@ class Header extends Component {
 
 const StyledHeader = styled.header`
   z-index: 10;
-  height: 8vh;
+  height: 4rem;
   width: 100vw;
 
   position: fixed;
@@ -131,9 +131,9 @@ const StyledHeader = styled.header`
     display: flex;
     text-align: left;
     font-size: var(--large);
+
     margin: 0;
     padding: 0;
-    font-size: var(--larger);
 
     & .nav-item {
       padding: 0;
@@ -161,7 +161,7 @@ const StyledHeader = styled.header`
         padding: 2rem 4rem 2rem 2rem;
         cursor: pointer;
 
-        font-size: var(--small);
+        font-size: 1.5rem;
 
         &:last-child {
           padding: 2rem 4rem 2rem 2rem;
@@ -185,6 +185,8 @@ const StyledHeader = styled.header`
   }
 
   @media (max-width: 1024px) {
+    height: 6rem;
+    
     & a {
       padding: 0;
     }

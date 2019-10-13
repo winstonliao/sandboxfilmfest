@@ -26,10 +26,7 @@ const StyledSplitLayout = styled.div`
     padding-right: 10rem;
   }
 
-  @media (max-width: 1399.98px) {
-  }
-
-  @media (max-width: 1136.98px) {
+  @media (max-width: 1137px) {
     & > div > div {
       padding-left: 8rem;
       padding-right: 8rem;
@@ -46,7 +43,7 @@ const StyledSplitLayout = styled.div`
 
     & > div > div {
       height: auto;
-      padding: 10rem 20rem;
+      padding: 10rem 16rem;
     }
   }
 

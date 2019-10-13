@@ -45,6 +45,13 @@ const profiles = [
 		linkName: 'YouTube',
 		image: '../images/jack.jpg'
 	},
+	{
+		name: 'Jason McRuer',
+		bio: 'Jason has been writing, directing, shooting, and editing short films since 2012. Having learned most of his skills by messing around on projects, he has loved the rapid growth that has come from these intense, adrenaline-packed weekends of filmmaking.',
+		link: 'https://www.jasonmcruer.com',
+		linkName: 'Portfolio',
+		image: '../images/jason.jpg'
+	},
 ]
 
 const StyledAboutSection = styled.div`
@@ -86,13 +93,23 @@ const StyledAboutSection = styled.div`
     }
 	}
 	
-	@media (max-width: 767.98px) {
+	@media (max-width: 768px) {
     & .carousel-wrapper {
       padding: 10rem 5rem;
+		}
+
+		& .title-wrapper .title {
+			font-size: 4rem;
+			line-height: 5rem;
+		}
+		
+		& .desc {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
     }
 	}
 	
-	@media (max-width: 412.98px) {
+	@media (max-width: 413px) {
     & .carousel-wrapper {
       padding: 10rem 3rem;
     }

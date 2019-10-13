@@ -31,7 +31,11 @@ const StyledFilmItem = styled.div`
     padding-top: 56.25%;
     
     background-image: url('${props => props.image}');
+    background-size: cover;
+    background-repeat: none;
     background-color: var(--black);
+
+    text-shadow: 0 0 5px var(--black);
 
     & span {
       display: inline-block;

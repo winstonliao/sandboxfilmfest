@@ -22,6 +22,17 @@ const StyledParagraph = styled.div`
     font-weight: var(--medium-weight);
     line-height: 1rem;
   }
+
+  @media (max-width: 767.98px) {
+    & .title {
+      font-size: 1.5rem;
+    }
+    
+    & .text {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
 `
 
 Paragraph.propTypes = {

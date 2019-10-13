@@ -76,7 +76,7 @@ class SignUpSection extends Component {
 			<StyledSignUpSection id={this.props.id}>
 				<SingleLayout>
 					<p className='title'>SIGN UP</p>
-					<p className='desc'>We are planning more events in the future, most likely in early 2020. Please sign up below to be added to our mailing list so you can get announcements directly in your inbox!</p>
+					<p className='desc'>We are planning more events in the future, most likely in early 2020. Please sign up below to be added to our mailing list so you can get announcements sent directly to your inbox!</p>
 					<Input name='email' label='EMAIL' placeholder='Email Address' color='var(--white)' isLong={ false }></Input>
 					<Button name='SUBMIT' color='var(--white)' bgColor='var(--yellow)' onClick={ this.submitHandler }></Button>
 				</SingleLayout>
@@ -105,9 +105,21 @@ const StyledSignUpSection = styled.div`
 		margin-bottom: 4rem;
 	}
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023.98px) {
     & > div {
       height: auto;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    & .title {
+      font-size: 4rem;
+      line-height: 1rem;
+    }
+
+    & .desc {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
     }
   }
 `

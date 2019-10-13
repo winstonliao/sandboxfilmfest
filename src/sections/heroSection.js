@@ -31,7 +31,7 @@ class Hero extends Component {
         <div className='text'>
           <p className='subtitle'>STANFORD UNIVERSITY'S</p>
           <p className='title'>SANDBOX <MediaQuery query="(max-width: 1023.98px)"><br></br></MediaQuery>FILM FEST</p>
-          <div>
+          <div className='action'>
             <div className='actionOuter'><span className='actionInner'>{this.state.action}</span></div>
             <span className='actionAfter'>&nbsp;A MOVIE <MediaQuery query="(max-width: 767.98px)"><br></br></MediaQuery> IN 48 HOURS</span>
           </div>
@@ -103,6 +103,23 @@ const StyledHero = styled.div`
 
     & .actionAfter {
       line-height: 3.5rem;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    & .text {
+      & .title {
+        font-size: 4rem;
+        line-height: 4rem;
+      }
+
+      & .action {
+        font-size: 0.75rem;
+
+        & .actionAfter {
+          line-height: 2.5rem;
+        }
+      }
     }
   }
 

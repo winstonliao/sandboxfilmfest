@@ -16,6 +16,7 @@ const ProfileItem = ({ image, name, bio, linkName, link }) => (
 )
 
 const StyledProfileItem = styled.div`
+  
   & .wrapper {
     position: relative;
     height: auto;
@@ -43,6 +44,7 @@ const StyledProfileItem = styled.div`
       position: relative;
       padding-top: 10rem;
       left: 0;
+      text-shadow: 0 0 3px var(--black);
 
       & .name {
         top: 20rem;
@@ -59,8 +61,6 @@ const StyledProfileItem = styled.div`
         font-size: var(--small);
         font-weight: var(--medium-weight);
         line-height: 1rem;
-
-        text-shadow: 0 0 3px var(--black);
       }
     
       & a {
@@ -78,6 +78,16 @@ const StyledProfileItem = styled.div`
 
       & .text {
         white-space: normal;
+
+        & .name {
+          font-size: 1.75rem;
+          line-height: 2rem;
+        }
+
+        & .bio {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
       }
 
       & .image {
@@ -86,7 +96,7 @@ const StyledProfileItem = styled.div`
     }
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 768px) {
     & .wrapper {
       width: 22rem;
     }

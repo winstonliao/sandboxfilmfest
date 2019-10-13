@@ -37,6 +37,9 @@ const StyledCarousel = styled.div`
 	}
 
 	@media (max-width: 1024px) {
+		display: flex;
+		flex-direction: row;
+
 		overflow-x: scroll;
 		overflow-y: hidden;
 		white-space: nowrap;

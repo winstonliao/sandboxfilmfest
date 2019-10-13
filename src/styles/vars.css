@@ -33,6 +33,11 @@
 @media (max-width: 767.98px) {
   :root {
     font-size: 14px;
+    --small: 1em;
+    --medium: 1.25em;
+    --large: 1.5em;
+    --larger: 2.5em;
+    --display: 5em;
   }
 }
 

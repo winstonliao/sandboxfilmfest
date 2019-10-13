@@ -62,7 +62,14 @@ const StyledHowItWorksSection = styled.div`
 				color: var(--white);
 			}
 		}
-  }
+	}
+	
+	@media (max-width: 768px) {
+		& .title-wrapper .title{
+			font-size: 4rem;
+			line-height: 5rem;
+		}
+	}
 `
 
 HowItWorksSection.propTypes = {

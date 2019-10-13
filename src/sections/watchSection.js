@@ -179,6 +179,11 @@ const StyledWatchSection = styled.div`
     & .carousel-wrapper {
       padding: 10rem 5rem;
     }
+
+    & .title-wrapper span {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
   }
 
   @media (max-width: 412.98px) {
@@ -191,40 +196,39 @@ const StyledWatchSection = styled.div`
 const films = [
   {
     title: 'Circulation',
-    image: '',
+    image: '../images/circulation.png',
     year: 2019,
-    video: '',
-    logline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    awards: [],
-    creators: [],
-    actors: [],
+    video: 'https://www.youtube.com/embed/aMn2dewvVwc',
+    logline: 'A little anger is good for the heart',
+    awards: ['Audience Choice', 'Best Actor', 'Best Editing'],
+    creators: ['Jason McRuer', 'Deedee Anderson', 'Jack Seibert'],
+    actors: ['Victor Ragsdale'],
     prompts: {
-      image: '',
-      quote: '',
-      autocomplete: '',
+      image: 'A boy staring at a lit candle',
+      quote: 'A little anger is good for the heart...the circulation, the skin',
     }
   },
   {
     title: 'Interference Patterns',
-    image: '',
+    image: '../images/interference_patterns.png',
     year: 2019,
-    video: '',
-    logline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    awards: [],
-    creators: [],
-    actors: [],
+    video: 'https://www.youtube.com/embed/mSl6xigRc1g',
+    logline: 'Two friends with dysfunctional communication adventure for a day in a strange, post-apocalyptic world',
+    awards: ['Best Actress', 'Best Use of Prompts'],
+    creators: ['Jack Virnich', 'Alli Armstrong', 'Nina Zubrilina', 'Carmelle Millar'],
+    actors: ['Justine Kaneda', 'Alli Armstrong'],
     prompts: {
-      image: '',
-      quote: '',
-      autocomplete: '',
+      image: "A person's reflection in a toaster",
+      quote: "If you're going through hell, keep going",
+      autocomplete: 'Hey you can do that it sounds good but I think you can get a lot more fun at this point and I am sure it will if she is the only person I know about it yet lol',
     }
   },
   {
     title: 'Firestruck',
-    image: '',
+    image: '../images/firestruck.png',
     year: 2018,
     video: 'https://www.youtube.com/embed/YlBkoGocaQo',
-    logline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    logline: 'A pyromaniac falls in a love with a firefighter',
     awards: ['Best Screenplay'],
     creators: ['Winston Liao', 'Robert Muni', 'Kati Uyemura', 'Erika DePalatis'],
     actors: ['Kiko Ilagan', 'Katiana Uyemura'],
@@ -234,31 +238,44 @@ const films = [
     }
   },
   {
-    title: 'TEST',
-    image: '',
+    title: 'Geo',
+    image: '../images/geo.png',
     year: 2018,
-    video: 'https://www.youtube.com/embed/YlBkoGocaQo',
-    logline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    awards: ['Best Screenplay'],
-    creators: ['Winston Liao', 'Robert Muni', 'Kati Uyemura', 'Erika DePalatis'],
-    actors: ['Kiko Ilagan', 'Katiana Uyemura'],
+    video: 'https://www.youtube.com/embed/bIcKHbf4LHM',
+    logline: 'Two finalists face off in the ultimate geocaching competition',
+    awards: ['Audience Choice', 'Best Actor', 'Best Screenplay'],
+    creators: ['Jack Virnich', 'Jason McRuer', 'Winston Liao'],
+    actors: ['Victor Ragsdale', 'Justine Kaneda', 'Kiko Ilagan'],
     prompts: {
-      image: 'Lady Gaga at with a long, white flowing gown',
-      quote: 'Love is friendship set on fire.',
+      image: 'Dishsoap poured onto a waffle',
+      quote: "If you love a flower, you don't pick it",
     }
   },
   {
-    title: 'TEST',
-    image: '',
+    title: 'My Man',
+    image: '../images/my_man.png',
     year: 2018,
-    video: 'https://www.youtube.com/embed/YlBkoGocaQo',
-    logline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    awards: ['Best Screenplay'],
-    creators: ['Winston Liao', 'Robert Muni', 'Kati Uyemura', 'Erika DePalatis'],
-    actors: ['Kiko Ilagan', 'Katiana Uyemura'],
+    video: 'https://drive.google.com/file/d/1kSgCHSsbFF76yzZxZh89ZN4A4WrI9lO6/preview',
+    logline: "You don't have to be admitted to come to Stanford",
+    creators: ['Alexander Kucy', 'Chelsea Sidrane', 'Max Drach', 'Harry Schwartz', 'Arnold Wu'],
+    actors: ['Max Drach', 'Robert Ehteshamzadeh'],
     prompts: {
-      image: 'Lady Gaga at with a long, white flowing gown',
-      quote: 'Love is friendship set on fire.',
+      image: 'Beer and cheese on a picnic table by the sea',
+      autocomplete: 'Ok, Yes, No',
+    }
+  },
+  {
+    title: 'Stanford 48 Hour Film',
+    image: '../images/48_hour.png',
+    year: 2018,
+    video: 'https://www.youtube.com/embed/ooc4x151Wr8',
+    logline: 'Film student makes 48 Hour film for Stanford festival',
+    creators: ['Maxwell Menzies'],
+    actors: ['Maxwell Menzies'],
+    awards: ['Most Likely to Inspire a Cult Film', 'Best Use of Prompts'],
+    prompts: {
+      image: 'Dancers crouched in a line across a stage',
+      autocomplete: 'I will be there in the morning to see if you want to come by and see you soon to catch up on the phone with my mom and sister are you free to talk today or tomorrow to get the kids',
     }
   },
 ]

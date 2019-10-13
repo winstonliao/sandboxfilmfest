@@ -27,12 +27,14 @@ const LightBox = ({ title, year, logline, video, creators, actors, awards, promp
             <p key={i}>{ actor }</p>
           ))}
         </div>
-        <div className='category' id='awards'>
-          <p>AWARDS 🏆</p>
-          {Array.from(awards).map((award, i) => (
-            <p key={i}>{ award }</p>
-          ))}
-        </div>
+        {awards.length > 0 && 
+          <div className='category' id='awards'>
+            <p>AWARDS 🏆</p>
+            {Array.from(awards).map((award, i) => (
+              <p key={i}>{ award }</p>
+            ))}
+          </div>
+        }
         <div className='category' id='prompts'>
           <p>PROMPTS</p>
           {Object.keys(prompts).map((prompt, i) => (
@@ -186,8 +188,27 @@ const StyledLightBox = styled.div`
     }
   }
 
-  @media (max-width: 767.98px) {
-    
+  @media (max-width: 413px) {
+    & .lightbox {
+      max-height: 75vh;
+    }
+
+    & .main-info {
+      padding: 2rem;
+    }
+
+    & .desc {
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      padding: 0;
+      margin: 2rem;
+      margin-top: 0;
+    }
+
+    & #awards {
+      margin-bottom: 1.5rem;
+    }
   }
 `
 
