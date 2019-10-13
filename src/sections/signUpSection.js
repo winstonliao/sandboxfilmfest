@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { sendForm } from '../components/sendForm'
 
 import SingleLayout from '../components/singleLayout'
 import Input from '../components/input'
@@ -31,7 +32,7 @@ class SignUpSection extends Component {
     const form = {
       email: this.state.email,
     }
-    this.sendForm(form).then(() => {
+    sendForm(form, 'AKfycbxrxqY2lHV3Tvg-XBtuIv1SqlNVF3U9yDt9tLdt5Cs3zsEHedY').then(() => {
       this.setState({
         email: '',
       });
@@ -42,24 +43,6 @@ class SignUpSection extends Component {
         alert("An error has occurred with submitting your email. Please try again.");
       }
     });
-  }
-
-  async sendForm(form) {
-    // Object.keys(form).forEach(key => {
-    //   if(form[key] === ''){
-    //     alert('Please fill in your '+key);
-    //     const properKey = key.charAt(0).toUpperCase() + key.slice(1);
-    //     throw new Error(properKey + ' field is blank.');
-    //   }
-    // })
-    // // Sends a GET to waitlisted to get a users link. We use encodeURIComponent to get proper formatting of special chars.
-    // return await $.ajax('https://script.google.com/macros/s/.../exec', {
-    //   type: 'GET',
-    //   data: form,
-    //   headers: {
-    //     'Content-Type': 'text/plain;charset=utf-8',
-    //   },
-    // });
   }
 
   modalHandler() {
@@ -77,7 +60,7 @@ class SignUpSection extends Component {
 				<SingleLayout>
 					<p className='title'>SIGN UP</p>
 					<p className='desc'>We are planning more events in the future, most likely in early 2020. Please sign up below to be added to our mailing list so you can get announcements sent directly to your inbox!</p>
-					<Input name='email' label='EMAIL' placeholder='Email Address' color='var(--white)' isLong={ false }></Input>
+					<Input onChange={this.changeHandler} name='email' label='EMAIL' placeholder='Email Address' color='var(--white)' isLong={ false } value={ this.state.email }></Input>
 					<Button name='SUBMIT' color='var(--white)' bgColor='var(--yellow)' onClick={ this.submitHandler }></Button>
 				</SingleLayout>
 				<Modal showModal={this.state.showModal} clickHandler={this.modalHandler}>

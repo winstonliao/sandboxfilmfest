@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { sendForm } from '../components/sendForm'
 
 import SingleLayout from '../components/singleLayout'
 import Input from '../components/input'
@@ -35,7 +36,7 @@ class ContactSection extends Component {
 			email: this.state.email,
 			message: this.state.message,
     }
-    this.sendForm(form).then(() => {
+    sendForm(form, 'AKfycbwFPuP10IEAXi8ANDLKU9ubpho8GqyGNMidXhb82Uz8OH3a49Q').then(() => {
       this.setState({
 				name: '',
 				email: '',
@@ -48,24 +49,6 @@ class ContactSection extends Component {
         alert("An error has occurred with submitting your message. Please try again.");
       }
     });
-  }
-
-  async sendForm(form) {
-    // Object.keys(form).forEach(key => {
-    //   if(form[key] === ''){
-    //     alert('Please fill in your '+key);
-    //     const properKey = key.charAt(0).toUpperCase() + key.slice(1);
-    //     throw new Error(properKey + ' field is blank.');
-    //   }
-    // })
-    // // Sends a GET to waitlisted to get a users link. We use encodeURIComponent to get proper formatting of special chars.
-    // return await $.ajax('https://script.google.com/macros/s/.../exec', {
-    //   type: 'GET',
-    //   data: form,
-    //   headers: {
-    //     'Content-Type': 'text/plain;charset=utf-8',
-    //   },
-    // });
   }
 
   modalHandler() {
@@ -82,9 +65,9 @@ class ContactSection extends Component {
 			<StyledContactSection id={this.props.id}>
 				<SingleLayout>
 					<p className='title'>CONTACT</p>
-          <Input name='name' label='NAME' placeholder='Name' color='var(--black)' isLong={ false }></Input>
-          <Input name='email' label='EMAIL' placeholder='Email Address' color='var(--black)' isLong={ false }></Input>
-          <Input name='message' label='MESSAGE' placeholder='Message' color='var(--black)' isLong={ true }></Input>
+          <Input onChange={this.changeHandler} name='name' label='NAME' placeholder='Name' color='var(--black)' isLong={ false } value={ this.state.name }></Input>
+          <Input onChange={this.changeHandler} name='email' label='EMAIL' placeholder='Email Address' color='var(--black)' isLong={ false } value={ this.state.email }></Input>
+          <Input onChange={this.changeHandler} name='message' label='MESSAGE' placeholder='Message' color='var(--black)' isLong={ true } value={ this.state.message }></Input>
 					<Button name='SUBMIT' color='var(--black)' bgColor='var(--white)' onClick={ this.submitHandler }></Button>
 				</SingleLayout>
 				<Modal showModal={this.state.showModal} clickHandler={this.modalHandler}>
