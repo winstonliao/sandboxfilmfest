@@ -27,7 +27,6 @@ const StyledFilmItem = styled.div`
     justify-content: flex-end;
 
     overflow: hidden;
-    width: calc(100vw - 6rem);
     height: 0;
     padding-top: 56.25%;
     
