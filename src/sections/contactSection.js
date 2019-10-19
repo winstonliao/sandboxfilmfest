@@ -96,6 +96,10 @@ const StyledContactSection = styled.div`
 		margin-bottom: 4rem;
   }
 
+  & textarea {
+    resize: vertical;
+  }
+
   @media (max-width: 767.98px) {
 		& .title{
 			font-size: 4rem;

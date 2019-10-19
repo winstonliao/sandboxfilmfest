@@ -7,7 +7,7 @@ const LightBox = ({ title, year, logline, video, creators, actors, awards, promp
     <div className='lightbox'>
       <div className='video'>
         <div class='embed-container'>
-          <iframe src={ video } frameborder='0' allowfullscreen></iframe>
+          <iframe src={ video } frameborder='0' allowFullScreen></iframe>
         </div>
       </div>
       <div className='main-info'>
@@ -195,6 +195,10 @@ const StyledLightBox = styled.div`
 
     & .main-info {
       padding: 2rem;
+      
+      & .logline {
+        line-height: inherit;
+      }
     }
 
     & .desc {
@@ -204,6 +208,10 @@ const StyledLightBox = styled.div`
       padding: 0;
       margin: 2rem;
       margin-top: 0;
+
+      & .category p {
+        line-height: inherit;
+      }
     }
 
     & #awards {

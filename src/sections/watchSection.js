@@ -47,6 +47,18 @@ class WatchSection extends Component {
     this.toggleScroll();
   }
 
+  // stopVideo(element) {
+  //   const iframe = element.querySelector( 'iframe');
+  //   const video = element.querySelector( 'video' );
+  //   if ( iframe ) {
+  //     var iframeSrc = iframe.src;
+  //     iframe.src = iframeSrc;
+  //   }
+  //   if ( video ) {
+  //     video.pause();
+  //   }
+  // };
+
   clickHandler() {
     this.setState(state => ({
       showModal: !state.showModal,
@@ -226,14 +238,14 @@ const films = [
   {
     title: 'Firestruck',
     image: '../images/firestruck.png',
-    year: 2018,
+    year: 2019,
     video: 'https://www.youtube.com/embed/YlBkoGocaQo',
     logline: 'A pyromaniac falls in a love with a firefighter',
     awards: ['Best Screenplay'],
     creators: ['Winston Liao', 'Robert Muni', 'Kati Uyemura', 'Erika DePalatis'],
     actors: ['Kiko Ilagan', 'Katiana Uyemura'],
     prompts: {
-      image: 'Lady Gaga at with a long, white flowing gown',
+      image: 'Lady Gaga at a gala with a long, white flowing gown',
       quote: 'Love is friendship set on fire.',
     }
   },
