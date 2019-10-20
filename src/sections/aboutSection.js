@@ -33,7 +33,7 @@ const desc = 'The Sandbox Film Fest was started in 2018 with the goal of empower
 const profiles = [
 	{
 		name: 'Winston Liao',
-		bio: 'Winston is a designer, engineer, and filmmaker based in the San Francisco Bay Area. He is currently studying mechatronics at Stanford University with the goal of developing technologies that facilitate joyful interaction and meaningful connections.',
+		bio: 'Winston is a designer, engineer, and filmmaker based in the San Francisco Bay Area. He is currently studying mechatronics at Stanford University with the goal of developing technologies that facilitate joyful interactions and meaningful connections.',
 		link: 'http://winstonliao.com',
 		linkName: 'Portfolio',
 		image: '../images/winston.jpg'

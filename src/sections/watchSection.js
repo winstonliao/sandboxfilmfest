@@ -47,18 +47,6 @@ class WatchSection extends Component {
     this.toggleScroll();
   }
 
-  // stopVideo(element) {
-  //   const iframe = element.querySelector( 'iframe');
-  //   const video = element.querySelector( 'video' );
-  //   if ( iframe ) {
-  //     var iframeSrc = iframe.src;
-  //     iframe.src = iframeSrc;
-  //   }
-  //   if ( video ) {
-  //     video.pause();
-  //   }
-  // };
-
   clickHandler() {
     this.setState(state => ({
       showModal: !state.showModal,
@@ -124,7 +112,7 @@ class WatchSection extends Component {
         >
         </SplitLayout>
         <Modal showModal={this.state.showModal} clickHandler={this.clickHandler}>
-          <LightBox {...this.state.film}></LightBox>
+          {this.state.showModal && <LightBox ref={this.lightBox} {...this.state.film}></LightBox>}
         </Modal>
 			</StyledWatchSection>
 		)

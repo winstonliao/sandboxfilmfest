@@ -7,9 +7,15 @@ export async function sendForm(form, id) {
       const properKey = key.charAt(0).toUpperCase() + key.slice(1);
       throw new Error(properKey + ' field is blank.');
     }
+    if(key === 'email') {
+      const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(!regex.test(form[key])) {
+        alert('Email is invalid')
+        throw new Error('Email is invalid');
+      }
+    }
   })
   const link = 'https://script.google.com/macros/s/' + id + '/exec';
-  console.log(link);
   return await $.ajax(link, {
     type: 'GET',
     data: form,

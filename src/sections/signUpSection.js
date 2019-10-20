@@ -38,7 +38,6 @@ class SignUpSection extends Component {
       });
       this.modalHandler();
     }).catch(response => {
-      console.log(response);
       if (response.responseJSON && response.responseJSON.errors) {
         alert("An error has occurred with submitting your email. Please try again.");
       }
