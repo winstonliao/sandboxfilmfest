@@ -102,7 +102,7 @@ const StyledContactSection = styled.div`
 
   @media (max-width: 767.98px) {
 		& .title{
-			font-size: 4rem;
+			font-size: var(--display);
 			line-height: 1rem;
 		}
 	}

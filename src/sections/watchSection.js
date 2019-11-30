@@ -181,8 +181,12 @@ const StyledWatchSection = styled.div`
     }
 
     & .title-wrapper span {
-      font-size: 4rem;
-      line-height: 5rem;
+      font-size: var(--display);
+      line-height: 4rem;
+
+      & :before {
+        border-bottom: solid 6px var(--yellow);
+      }
     }
   }
 

@@ -31,7 +31,7 @@ class Header extends Component {
         <div class='left'>
           <Link to='/#hero'>
             <img src={logo} alt='logo' className='logo'></img>
-            <p className='title'>{this.props.siteTitle.toUpperCase()}</p>
+            <p className='title'>SANDBOX <MediaQuery query="(max-width: 374.98px)"><br></br></MediaQuery>FILM FEST</p>
           </Link>
         </div>
 
@@ -40,8 +40,9 @@ class Header extends Component {
             <nav>
               <Link to='/#how_it_works'>HOW IT WORKS</Link>
               <Link to='/#watch'>WATCH</Link>
+              <Link to='/#event'>WINTER 2020</Link>
+              <Link to='/#sign_up'>SUBSCRIBE</Link>
               <Link to='/#about'>ABOUT</Link>
-              <Link to='/#sign_up'>SIGN UP</Link>
               <Link to='/#contact'>CONTACT</Link>
             </nav>
           </MediaQuery>
@@ -53,8 +54,9 @@ class Header extends Component {
                 <nav onClick={this.hamburgerHandler} className={this.state.showMobileNav ? 'show' : ''}>
                   <Link to='/#how_it_works'>HOW IT WORKS</Link>
                   <Link to='/#watch'>WATCH</Link>
+                  <Link to='/#event'>WINTER 2020</Link>
+                  <Link to='/#sign_up'>SUBSCRIBE</Link>
                   <Link to='/#about'>ABOUT</Link>
-                  <Link to='/#sign_up'>SIGN UP</Link>
                   <Link to='/#contact'>CONTACT</Link>
                 </nav>
                 <div className='cover'></div>
@@ -145,7 +147,7 @@ const StyledHeader = styled.header`
 
     & nav {
       position: absolute;
-      top: 8vh;
+      top: 6rem;
       right: 0;
       margin: 0;
       height: 100vh;

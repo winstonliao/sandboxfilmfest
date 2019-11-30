@@ -57,10 +57,10 @@ class SignUpSection extends Component {
     return(
 			<StyledSignUpSection id={this.props.id}>
 				<SingleLayout>
-					<p className='title'>SIGN UP</p>
-					<p className='desc'>We are planning more events in the future, most likely in early 2020. Please sign up below to be added to our mailing list so you can get announcements sent directly to your inbox!</p>
+					<p className='title'>SUBSCRIBE</p>
+					<p className='desc'>We are planning even more events in the future. Please sign up below to be added to our mailing list so you can get announcements sent directly to your inbox!</p>
 					<Input onChange={this.changeHandler} name='email' label='EMAIL' placeholder='Email Address' color='var(--white)' isLong={ false } value={ this.state.email }></Input>
-					<Button name='SUBMIT' color='var(--white)' bgColor='var(--yellow)' onClick={ this.submitHandler }></Button>
+					<Button name='SUBMIT' color='var(--white)' bgColor='var(--black)' onClick={ this.submitHandler }></Button>
 				</SingleLayout>
 				<Modal showModal={this.state.showModal} clickHandler={this.modalHandler}>
           <MessageBox headline='Thanks!' message='You have been added to our mailing list.'></MessageBox>
@@ -73,7 +73,7 @@ class SignUpSection extends Component {
 const StyledSignUpSection = styled.div`
 
 	color: var(--white);
-	background-color: var(--yellow);
+	background-color: var(--black);
 
 	& > div {
 		height: 100vh;
@@ -95,7 +95,7 @@ const StyledSignUpSection = styled.div`
 
   @media (max-width: 767.98px) {
     & .title {
-      font-size: 4rem;
+      font-size: var(--display);
       line-height: 1rem;
     }
 

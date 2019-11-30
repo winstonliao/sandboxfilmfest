@@ -35,6 +35,7 @@ class Hero extends Component {
             <div className='actionOuter'><span className='actionInner'>{this.state.action}</span></div>
             <span className='actionAfter'>&nbsp;A MOVIE <MediaQuery query="(max-width: 767.98px)"><br></br></MediaQuery> IN 48 HOURS</span>
           </div>
+          <p className='date'>JANUARY 17 - 19, 2020</p>
         </div>
         <div className='opacity'></div>
 			</StyledHero>
@@ -85,7 +86,7 @@ const StyledHero = styled.div`
 
     & .title {
       margin-bottom: 3rem;
-      line-height: 5rem;
+      line-height: 4rem;
 
       font-family: var(--display-font);
       font-weight: var(--display-weight);
@@ -104,12 +105,17 @@ const StyledHero = styled.div`
     & .actionAfter {
       line-height: 3.5rem;
     }
+
+    & .date {
+      margin-top: 1rem;
+      font-size: var(--large);
+    }
   }
 
   @media (max-width: 767.98px) {
     & .text {
       & .title {
-        font-size: 4rem;
+        font-size: var(--display);
         line-height: 4rem;
       }
 
@@ -119,6 +125,10 @@ const StyledHero = styled.div`
         & .actionAfter {
           line-height: 2.5rem;
         }
+      }
+
+      & .date {
+        font-size: var(--medium);
       }
     }
   }

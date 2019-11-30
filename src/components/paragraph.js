@@ -10,7 +10,7 @@ const Paragraph = ({ title, text}) => (
 )
 
 const StyledParagraph = styled.div`
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 
   & .title {
     font-size: var(--medium);

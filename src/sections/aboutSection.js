@@ -99,8 +99,8 @@ const StyledAboutSection = styled.div`
 		}
 
 		& .title-wrapper .title {
-			font-size: 4rem;
-			line-height: 5rem;
+			font-size: var(--display);
+			line-height: 4rem;
 		}
 		
 		& .desc {

@@ -10,6 +10,7 @@ import WatchSection from '../sections/watchSection'
 import AboutSection from '../sections/aboutSection'
 import SignUpSection from '../sections/signUpSection'
 import ContactSection from '../sections/contactSection'
+import EventSection from '../sections/eventSection'
 
 const IndexPage = () => (
   <Layout>
@@ -17,8 +18,9 @@ const IndexPage = () => (
     <HeroSection id='hero'></HeroSection>
     <HowItWorksSection id='how_it_works'></HowItWorksSection>
     <WatchSection id='watch'></WatchSection>
-    <AboutSection id='about'></AboutSection>
+    <EventSection id='event'></EventSection>
     <SignUpSection id='sign_up'></SignUpSection>
+    <AboutSection id='about'></AboutSection>
     <ContactSection id='contact'></ContactSection>
   </Layout>
 )
