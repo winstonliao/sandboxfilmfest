@@ -18,7 +18,7 @@ const StyledSplitLayout = styled.div`
   grid-template-rows: 100%;
   grid-template-columns: 50% 50%;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 
   & > div > div {
     height: 100%;

@@ -70,7 +70,7 @@ class Header extends Component {
 const StyledHeader = styled.header`
   z-index: 10;
   height: 4rem;
-  width: 100vw;
+  width: 100%;
 
   position: fixed;
   top: 0;

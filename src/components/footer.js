@@ -10,7 +10,7 @@ const Footer = ({ siteTitle }) => (
 
 const StyledFooter = styled.footer`
   height: 40vh;
-  width: 100vw;
+  width: 100%;
 
   display: flex;
   align-items: center;

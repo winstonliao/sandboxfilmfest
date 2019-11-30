@@ -44,7 +44,7 @@ class Hero extends Component {
 
 const StyledHero = styled.div`
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding-top: 50vh;
   padding-left: 15vw;
@@ -59,7 +59,7 @@ const StyledHero = styled.div`
     top: 0;
     left: 0;
     z-index: 1;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: white;
     opacity: 0.85;
