@@ -57,7 +57,7 @@ const StyledHowItWorksSection = styled.div`
 		}
 	}
 
-	@media (max-width: 1024px) {
+	@media (max-width: 1080px) {
 		& .title-wrapper {
 			background-color: var(--black);
 			border: none;

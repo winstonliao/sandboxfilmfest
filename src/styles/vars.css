@@ -24,13 +24,9 @@
   --width-small: 75%;
 }
 
-@media (max-width: 1024px) {
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   :root {
-    font-size: 14px;
-
+    font-size: 16px;
     --small: 1em;
     --medium: 1.25em;
     --large: 1.5em;
@@ -39,14 +35,18 @@
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 500px) {
   :root {
     font-size: 12px;
-
-    --small: 1em;
+    
     --medium: 1.5em;
     --large: 1.75em;
-    --larger: 2.5em;
     --display: 3.5em;
   }
 }

@@ -16,8 +16,8 @@ const StyledSingleLayout = styled.div`
 	justify-content: center;
 	padding: 10rem 25rem;
 
-	@media (max-width: 1399.98px) {
-
+	@media (max-width: 1424px) {
+    padding: 10rem 15rem;
   }
 
   @media (max-width: 1024px) {

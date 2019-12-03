@@ -13,7 +13,7 @@ const StyledParagraph = styled.div`
   margin-bottom: 2.5rem;
 
   & .title {
-    font-size: var(--medium);
+    font-size: var(--large);
     font-weight: var(--heavy-weight);
   }
 
@@ -23,14 +23,15 @@ const StyledParagraph = styled.div`
     line-height: 1rem;
   }
 
-  @media (max-width: 767.98px) {
-    & .title {
-      font-size: 1.5rem;
-    }
-    
+  @media (max-width: 1080px) {
     & .text {
-      font-size: 1.25rem;
-      line-height: 1.75rem;
+      line-height: 1rem;
+    }
+  }
+
+  @media (max-width: 767.98px) {    
+    & .text {
+      line-height: 1.25rem;
     }
   }
 `

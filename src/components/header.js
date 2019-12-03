@@ -31,12 +31,12 @@ class Header extends Component {
         <div class='left'>
           <Link to='/#hero'>
             <img src={logo} alt='logo' className='logo'></img>
-            <p className='title'>SANDBOX <MediaQuery query="(max-width: 374.98px)"><br></br></MediaQuery>FILM FEST</p>
+            <p className='title'>SANDBOX <MediaQuery query="(max-width: 374.98px)"><br/></MediaQuery>FILM FEST</p>
           </Link>
         </div>
 
         <div class='right'>
-          <MediaQuery query="(min-width: 1024.02px)">      
+          <MediaQuery query="(min-width: 1080.02px)">      
             <nav>
               <Link to='/#how_it_works'>HOW IT WORKS</Link>
               <Link to='/#watch'>WATCH</Link>
@@ -47,7 +47,7 @@ class Header extends Component {
             </nav>
           </MediaQuery>
 
-          <MediaQuery query="(max-width: 1024px)">
+          <MediaQuery query="(max-width: 1080px)">
             <div className='mobile-nav'>
               <div className='nav-item dropdown'>
                 <p className='nav-title hamburger' onClick={this.hamburgerHandler}>{this.state.showMobileNav ? '✕' : '☰' }</p> 
@@ -108,8 +108,13 @@ const StyledHeader = styled.header`
 
   & .left {
     padding-left: 2rem;
+    padding-right: 0;
     display: flex;
     align-items: center;
+
+    & a {
+      padding-right: 0;
+    }
 
     & .title {
       display: inline;
@@ -186,7 +191,7 @@ const StyledHeader = styled.header`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1080px) {
     height: 6rem;
     
     & a {
