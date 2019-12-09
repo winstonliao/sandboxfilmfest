@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
+import Visibility from 'react-intersection-observer'
 
 import SplitLayout from '../components/splitLayout'
 import Carousel from '../components/carousel'
@@ -16,11 +17,12 @@ class WatchSection extends Component {
       year: 2019,
       film: films[0],
       showModal: false,
+      container: null,
     };
     this.modalHandler = this.modalHandler.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
     this.yearHandler = this.yearHandler.bind(this);
-    this.scrollHandler = this.scrollHandler.bind(this);
+    this.visibilityHandler = this.visibilityHandler.bind(this);
     this.year2019 = React.createRef();
     this.year2018 = React.createRef();
     this.carousel = React.createRef();
@@ -30,13 +32,12 @@ class WatchSection extends Component {
     }, {});
   }
 
-  // componentDidMount() {
-  //   this.carousel.addEventListener("scroll", this.scrollHandler);
-  // }
-
-  // componentWillUnmount() {
-  //   this.carousel.removeEventListener("scroll", this.scrollHandler);
-  // }
+  componentDidMount() {
+    this.setState(state => ({
+      container: ReactDOM.findDOMNode(this.carousel.current),
+      })
+    );
+  }
 
   modalHandler(film) {
     this.setState(state => ({
@@ -62,25 +63,9 @@ class WatchSection extends Component {
     ReactDOM.findDOMNode(this.filmRefs[index].current).scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
   }
 
-  scrollHandler() {
-    console.log('scroll');
-
-    let yearPos = {};
-    Array.from(this.carousel.current.props.children).reverse().map( (film, i) => {
-      yearPos[film.year] = ReactDOM.findDOMNode(this.filmRefs[i].current).offsetTop;
-    });
-
-    console.log(this.carousel.offsetTop);
-    console.log(yearPos);
-
-    yearPos.keys().map(Number).forEach( year => {
-      if(this.carousel.scrollTop >= yearPos[year]) {
-        this.setState(state => ({
-          year: year,
-        }));
-        return;
-      }
-    });
+  visibilityHandler(inView, entry) {
+    console.log(inView);
+    console.log(entry.target.getAttribute('index'));
   }
 
   toggleScroll() {
@@ -102,9 +87,11 @@ class WatchSection extends Component {
           }
           right={
             <div className='carousel-wrapper'>
-              <Carousel ref={this.carousel} isLight={true} onScroll={ this.scrollHandler }>
+              <Carousel ref={this.carousel} isLight={true}>
                 {films.map((film, i) => (
-                  <FilmItem key={i} ref={this.filmRefs[i]} {...film} onClick={ () => this.modalHandler(film) }></FilmItem>
+                  <Visibility ref={this.filmRefs[i]} key={i} index={i} year={film.year} root={this.state.container} onChange={this.visibilityHandler}>
+                    <FilmItem {...film} onClick={ () => this.modalHandler(film) }></FilmItem>
+                  </Visibility>
                 ))}
               </Carousel>
             </div>

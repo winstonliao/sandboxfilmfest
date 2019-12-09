@@ -9,7 +9,7 @@ class Carousel extends Component {
 
 	render() {
     return (
-			<StyledCarousel isLight={this.props.isLight} onScroll={ this.props.scrollHandler }>
+			<StyledCarousel isLight={this.props.isLight} id={this.props.id}>
 				{this.props.children}
 			</StyledCarousel>
 		)
@@ -36,7 +36,7 @@ const StyledCarousel = styled.div`
 		background-color: ${props => props.isLight ? 'var(--black)' : 'var(--white)'};
 	}
 
-	@media (max-width: 1024px) {
+	@media (max-width: 1080px) {
 		display: flex;
 		flex-direction: row;
 
