@@ -8,25 +8,30 @@ import Carousel from '../components/carousel'
 import FilmItem from '../components/filmItem'
 import Modal from '../components/modal'
 import LightBox from '../components/lightBox'
+import Year from '../components/year'
 
 class WatchSection extends Component {
 
   constructor() {
     super();
+
     this.state = {
       year: 2019,
       film: films[0],
+      percent: '',
       showModal: false,
       container: null,
     };
+
     this.modalHandler = this.modalHandler.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
     this.yearHandler = this.yearHandler.bind(this);
     this.visibilityHandler = this.visibilityHandler.bind(this);
+
     this.year2019 = React.createRef();
     this.year2018 = React.createRef();
     this.carousel = React.createRef();
-    this.filmRefs = films.reduce( (acc, film, i) => {
+    this.filmRefs = films.reduce((acc, film, i) => {
       acc[i] = React.createRef();
       return acc;
     }, {});
@@ -64,8 +69,23 @@ class WatchSection extends Component {
   }
 
   visibilityHandler(inView, entry) {
-    console.log(inView);
-    console.log(entry.target.getAttribute('index'));
+    console.log()
+    if (inView) {
+      const year = parseInt(entry.target.getAttribute('year'));
+      const index = parseInt(entry.target.getAttribute('index'));
+
+      const startIndex = films.findIndex(film => film.year === year);
+      const endIndex = films.length - films.slice().reverse().findIndex(film => film.year === year) - 1;
+
+      console.log('start: ' + startIndex);
+      console.log('end: ' + endIndex);
+      console.log('index: ' + index);
+
+      this.setState(state => ({
+        percent: 100 * ((index - startIndex + 1) / (endIndex - startIndex + 1)) + '%',
+        year: this.state.year == year ? this.state.year : year,
+      }));
+    }
   }
 
   toggleScroll() {
@@ -81,15 +101,15 @@ class WatchSection extends Component {
           left={
             <div className='title-wrapper'>
               <span>WATCH</span>
-              <span className={this.state.year === 2019 ? 'underline' : ''} ref={this.year2019} onClick={ () => this.yearHandler(2019) }>2019</span>
-              <span className={this.state.year === 2018 ? 'underline' : ''} ref={this.year2018} onClick={ () => this.yearHandler(2018) }>2018</span>
+              <Year selected={this.state.year === 2019} year={2019} ref={this.year2019} percent={this.state.percent} onClick={() => this.yearHandler(2019)}></Year>
+              <Year selected={this.state.year === 2018} year={2018} ref={this.year2018} percent={this.state.percent} onClick={() => this.yearHandler(2018)}></Year>
             </div>
           }
           right={
             <div className='carousel-wrapper'>
               <Carousel ref={this.carousel} isLight={true}>
                 {films.map((film, i) => (
-                  <Visibility ref={this.filmRefs[i]} key={i} index={i} year={film.year} root={this.state.container} onChange={this.visibilityHandler}>
+                  <Visibility ref={this.filmRefs[i]} key={i} index={i} year={film.year} root={this.state.container} threshold={0.99} onChange={this.visibilityHandler}>
                     <FilmItem {...film} onClick={ () => this.modalHandler(film) }></FilmItem>
                   </Visibility>
                 ))}
@@ -107,40 +127,25 @@ class WatchSection extends Component {
 }
 
 const StyledWatchSection = styled.div`
+
 	& .title-wrapper {
     display: flex;
     flex-direction: column;
 		justify-content: center;
 		height: 100%;
 
-		& > span {
+    & > span {
+      width: auto;
       position: relative;
       margin-right: auto;
-			line-height: 6rem;
+      line-height: 6rem;
       text-decoration: none;
 
-			color: var(--black);
+      color: var(--black);
       font-family: var(--display-font);
       font-weight: var(--display-weight);
       font-size: var(--display);
-
-      cursor: pointer;
-
-      &:before {
-        content: '';
-        position: absolute;
-        height: 0;
-        left: 0;
-        bottom: -8px;
-        width: 0;
-        border-bottom: solid 8px var(--yellow);
-        transition: width ease-in-out 0.2s;
-      }
-
-      &.underline:before {
-        width: 100%;
-      }
-		}
+    }
 	}
 
   & .carousel-wrapper {

@@ -99,7 +99,7 @@ const StyledHero = styled.div`
     }
 
     & .actionInner {
-      border-bottom: solid 4px var(--yellow);
+      border-bottom: solid 6px var(--yellow);
     }
 
     & .actionAfter {
@@ -117,6 +117,10 @@ const StyledHero = styled.div`
       & .title {
         font-size: var(--display);
         line-height: 4rem;
+      }
+      
+      & .actionInner {
+        border-bottom: solid 4px var(--yellow);
       }
 
       & .action {

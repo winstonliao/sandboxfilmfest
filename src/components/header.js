@@ -28,14 +28,14 @@ class Header extends Component {
   render() {
     return(
       <StyledHeader>
-        <div class='left'>
+        <div className='left'>
           <Link to='/#hero'>
             <img src={logo} alt='logo' className='logo'></img>
             <p className='title'>SANDBOX <MediaQuery query="(max-width: 374.98px)"><br/></MediaQuery>FILM FEST</p>
           </Link>
         </div>
 
-        <div class='right'>
+        <div className='right'>
           <MediaQuery query="(min-width: 1080.02px)">      
             <nav>
               <Link to='/#how_it_works'>HOW IT WORKS</Link>
