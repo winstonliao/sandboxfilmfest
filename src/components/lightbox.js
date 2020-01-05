@@ -140,7 +140,7 @@ const StyledLightBox = styled.div`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1080px) {
     & .lightbox {
       height: auto;
       width: 75vw;

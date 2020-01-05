@@ -20,7 +20,7 @@ const StyledSingleLayout = styled.div`
     padding: 10rem 15rem;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1080px) {
     padding: 10rem 15rem;
     height: auto;		
   }
