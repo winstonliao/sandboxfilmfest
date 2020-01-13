@@ -24,10 +24,10 @@ class EventSection extends Component {
 			<StyledEventSection id={this.props.id}>
 				<SingleLayout>
 					<p className='title'>WINTER 2020</p>
-          <p className='desc info'><strong>Kickoff: </strong>5:30PM, January 17th</p>
-          <p className='desc info'><strong>Deadline: </strong>6:00PM, January 19th</p>
-          <p className='desc info'><strong>Screening: </strong>7:00PM, January 19th</p>
-          <p className='desc info last'><strong>Location: </strong>TBA</p>
+          <p className='desc info'><strong>Kickoff: </strong>5:00PM - 5:30PM, Jan 17th</p>
+          <p className='desc info'><strong>Deadline: </strong>6:00PM, Jan 19th</p>
+          <p className='desc info'><strong>Screening: </strong>7:00PM - 8:30PM, Jan 19th</p>
+          <p className='desc info last'><strong>Location: </strong>Roble Arts Gym</p>
 					<p className='desc'>
             Registration is now open! Sign up as an individual or as a team. You will also be asked to provide prompts for the festival as well.
           </p>
