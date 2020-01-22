@@ -16,7 +16,7 @@ class WatchSection extends Component {
     super();
 
     this.state = {
-      year: 2019,
+      year: 2020,
       film: films[0],
       percent: '',
       showModal: false,
@@ -101,6 +101,7 @@ class WatchSection extends Component {
           left={
             <div className='title-wrapper'>
               <span>WATCH</span>
+              <Year selected={this.state.year === 2020} year={2020} ref={this.year2020} percent={this.state.percent} onClick={() => this.yearHandler(2020)}></Year>
               <Year selected={this.state.year === 2019} year={2019} ref={this.year2019} percent={this.state.percent} onClick={() => this.yearHandler(2019)}></Year>
               <Year selected={this.state.year === 2018} year={2018} ref={this.year2018} percent={this.state.percent} onClick={() => this.yearHandler(2018)}></Year>
             </div>
@@ -195,8 +196,106 @@ const StyledWatchSection = styled.div`
 
 const films = [
   {
+    title: 'Millenial v. Wild',
+    image: '../images/millenial.jpg',
+    year: 2020,
+    video: '',
+    logline: 'A millennial generously agrees to be part of a new show on the Discovery Channel',
+    awards: ['Audience Choice', 'Best Actor'],
+    creators: ['Michael Lin', 'Zach Clayton'],
+    actors: ['Julian Bernardo', 'Zach Clayton', 'Michael Lin'],
+    prompts: {
+      image: 'A village on a mountainside',
+      quote: '\"Don\'t confuse my generosity with generosity\" -\xa0White Rose',
+    }
+  },
+  {
+    title: "Don't Panic",
+    image: '../images/panic.jpg',
+    year: 2020,
+    video: '',
+    logline: 'A young woman tries to remain calm during a period of stress',
+    awards: ['Best Actress', 'Best Use of Prompts'],
+    creators: ['Caroline Utz', 'Isabel Benak', 'Gabriel Mukobi'],
+    actors: ['Caroline Utz'],
+    prompts: {
+      image: 'Jupiter\'s surface',
+      quote: '\"Don\'t panic\" -\xa0Douglas Adams',
+      song: 'Genesis by Justice'
+    }
+  },
+  {
+    title: 'To Save a Pearl',
+    image: '../images/pearl.jpg',
+    year: 2020,
+    video: '',
+    logline: 'A King tormented, not by what he has built, but by what he cannot bring with him',
+    awards: ['Best Screenplay', 'Most Likely to Inspire a Cult Following'],
+    creators: ['McArdle Hankin', 'Liam McArdle-Hankin', 'Callum Fabio'],
+    actors: ['Liam McArdle-Hankin'],
+    prompts: {
+      image: 'Jesus fresco',
+      quote: '\"May the king live forever\"',
+      song: 'Sultans of Swing by Dire Straits'
+    }
+  },
+  {
+    title: "Submission",
+    image: '../images/panic.jpg',
+    year: 2020,
+    video: '',
+    logline: 'A man\'s way out',
+    awards: ['Best Use of Prompts'],
+    creators: ['Eli Navarro', 'Colin Kalicki', 'Ayush Pandit'],
+    actors: ['Eli Navarro'],
+    prompts: {
+      image: 'Sunrise over a city',
+      quote: '\"You have the right to work, but for the work\'s sake only. You have no right to the fruits of work. Desire for the fruits of work must never be your motive in working. Never give way to laziness, either.\" -\xa0Bhagavad Gita',
+      song: 'Never Gonna Give You Up by Rick Astley',
+    }
+  },
+  {
+    title: 'The Dream',
+    image: '../images/dream.jpg',
+    year: 2020,
+    video: '',
+    logline: 'A cutthroat 80\'s stockbroker is taught a valuable lesson that he\'ll never forget',
+    creators: ['Brian Contreras', 'Robin Fierberg', 'Jack Greenberg'],
+    actors: ['Jack Greenberg', 'Brian Contreras', 'Rose Greenberg', 'Cameron Most'],
+    prompts: {
+      quote: '\"It\’s a dog eat dog world\"',
+      song: 'Lucid Dreams by Juice WRLD'
+    }
+  },
+  {
+    title: 'Symbiosis',
+    image: '../images/symbiosis.jpg',
+    year: 2020,
+    video: '',
+    logline: 'We all fall in love',
+    creators: ['Sofia Monroy', 'Lore V. Olivera', 'Jorie Bateman-Coe'],
+    actors: ['Jorie Bateman-Coe'],
+    prompts: {
+      image: 'A boy in a snowscape with a portal before him',
+      quote: 'Work It by Marie Davidson',
+    }
+  },
+  {
+    title: 'Sight Unseen',
+    image: '../images/sight.jpg',
+    year: 2020,
+    video: '',
+    logline: 'Love\'s blindspots',
+    creators: ['Michael Bereket', 'Robert Muni', 'Winston Liao'],
+    actors: ['Brahm Capoor', 'Lexi Stein'],
+    prompts: {
+      image: 'Kissing heads shrouded with cloth',
+      song: 'Le fleurs by Minnie Riperton'
+    }
+  },
+  {
     title: 'Circulation',
-    image: '../images/circulation.png',
+    image: '../images/circulation.jpg',
     year: 2019,
     video: 'https://www.youtube.com/embed/aMn2dewvVwc',
     logline: 'A little anger is good for the heart',
@@ -210,7 +309,7 @@ const films = [
   },
   {
     title: 'Interference Patterns',
-    image: '../images/interference_patterns.png',
+    image: '../images/interference_patterns.jpg',
     year: 2019,
     video: 'https://www.youtube.com/embed/mSl6xigRc1g',
     logline: 'Two friends with dysfunctional communication adventure for a day in a strange, post-apocalyptic world',
@@ -225,7 +324,7 @@ const films = [
   },
   {
     title: 'Firestruck',
-    image: '../images/firestruck.png',
+    image: '../images/firestruck.jpg',
     year: 2019,
     video: 'https://www.youtube.com/embed/YlBkoGocaQo',
     logline: 'A pyromaniac falls in a love with a firefighter',
@@ -239,7 +338,7 @@ const films = [
   },
   {
     title: 'Geo',
-    image: '../images/geo.png',
+    image: '../images/geo.jpg',
     year: 2018,
     video: 'https://www.youtube.com/embed/bIcKHbf4LHM',
     logline: 'Two finalists face off in the ultimate geocaching competition',
@@ -253,7 +352,7 @@ const films = [
   },
   {
     title: 'My Man',
-    image: '../images/my_man.png',
+    image: '../images/my_man.jpg',
     year: 2018,
     video: 'https://drive.google.com/file/d/1kSgCHSsbFF76yzZxZh89ZN4A4WrI9lO6/preview',
     logline: "You don't have to be admitted to come to Stanford",
@@ -266,7 +365,7 @@ const films = [
   },
   {
     title: 'Stanford 48 Hour Film',
-    image: '../images/48_hour.png',
+    image: '../images/48_hour.jpg',
     year: 2018,
     video: 'https://www.youtube.com/embed/ooc4x151Wr8',
     logline: 'Film student makes 48 Hour film for Stanford festival',

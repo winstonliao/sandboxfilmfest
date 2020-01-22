@@ -40,7 +40,7 @@ class Header extends Component {
             <nav>
               <Link to='/#how_it_works'>HOW IT WORKS</Link>
               <Link to='/#watch'>WATCH</Link>
-              <Link to='/#event'>WINTER 2020</Link>
+              {/* <Link to='/#event'>WINTER 2020</Link> */}
               <Link to='/#sign_up'>SUBSCRIBE</Link>
               <Link to='/#about'>ABOUT</Link>
               <Link to='/#contact'>CONTACT</Link>
@@ -54,7 +54,7 @@ class Header extends Component {
                 <nav onClick={this.hamburgerHandler} className={this.state.showMobileNav ? 'show' : ''}>
                   <Link to='/#how_it_works'>HOW IT WORKS</Link>
                   <Link to='/#watch'>WATCH</Link>
-                  <Link to='/#event'>WINTER 2020</Link>
+                  {/* <Link to='/#event'>WINTER 2020</Link> */}
                   <Link to='/#sign_up'>SUBSCRIBE</Link>
                   <Link to='/#about'>ABOUT</Link>
                   <Link to='/#contact'>CONTACT</Link>

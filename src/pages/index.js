@@ -18,7 +18,7 @@ const IndexPage = () => (
     <HeroSection id='hero'></HeroSection>
     <HowItWorksSection id='how_it_works'></HowItWorksSection>
     <WatchSection id='watch'></WatchSection>
-    <EventSection id='event'></EventSection>
+    {/* <EventSection id='event'></EventSection> */}
     <SignUpSection id='sign_up'></SignUpSection>
     <AboutSection id='about'></AboutSection>
     <ContactSection id='contact'></ContactSection>

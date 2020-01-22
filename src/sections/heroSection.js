@@ -35,7 +35,7 @@ class Hero extends Component {
             <div className='actionOuter'><span className='actionInner'>{this.state.action}</span></div>
             <span className='actionAfter'>&nbsp;A MOVIE <MediaQuery query="(max-width: 767.98px)"><br></br></MediaQuery> IN 48 HOURS</span>
           </div>
-          <p className='date'>JANUARY 17 - 19, 2020</p>
+          {/* <p className='date'>JANUARY 17 - 19, 2020</p> */}
         </div>
         <div className='opacity'></div>
 			</StyledHero>
