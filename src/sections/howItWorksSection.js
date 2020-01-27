@@ -32,7 +32,7 @@ const paragraphs = [
 	},
 	{
 		title: 'Writing, Shooting, & Editing',
-		text: 'After kickoff, you have 48 hours to write, shoot, and edit your film. Your team members must be the main contributors to the creation of the film, though you may recruit actors and other crew members to help out!',
+		text: 'After kickoff, you have 48 hours to write, shoot, and edit your film. Your team members must be the main contributors to the creation of the film, though you may recruit actors and other crew members to help out.',
 	},
 	{
 		title: 'Participation',
