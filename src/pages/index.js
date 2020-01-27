@@ -14,7 +14,7 @@ import EventSection from '../sections/eventSection'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home" image='https://sandboxfilmfest.org/images/film.jpg'/>
     <HeroSection id='hero'></HeroSection>
     <HowItWorksSection id='how_it_works'></HowItWorksSection>
     <WatchSection id='watch'></WatchSection>
