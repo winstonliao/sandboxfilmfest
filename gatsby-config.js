@@ -28,19 +28,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: `Work Sans`,
-            variants: [`400`, `500`, `600`],
-          },
-          {
-            family: `Playfair Display`,
-            variants: [`400i`,`900`],
-          },
-        ],
-      },
+        google: {
+          families: ['Playfair Display:400i,900', 'Work Sans:400,500,600']
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-styled-components`,

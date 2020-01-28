@@ -69,17 +69,12 @@ class WatchSection extends Component {
   }
 
   visibilityHandler(inView, entry) {
-    console.log()
     if (inView) {
       const year = parseInt(entry.target.getAttribute('year'));
       const index = parseInt(entry.target.getAttribute('index'));
 
       const startIndex = films.findIndex(film => film.year === year);
       const endIndex = films.length - films.slice().reverse().findIndex(film => film.year === year) - 1;
-
-      console.log('start: ' + startIndex);
-      console.log('end: ' + endIndex);
-      console.log('index: ' + index);
 
       this.setState(state => ({
         percent: 100 * ((index - startIndex + 1) / (endIndex - startIndex + 1)) + '%',

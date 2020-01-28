@@ -31,7 +31,7 @@ class Header extends Component {
         <div className='left'>
           <Link to='/#hero'>
             <img src={logo} alt='logo' className='logo'></img>
-            <p className='title'>SANDBOX <MediaQuery query="(max-width: 374.98px)"><br/></MediaQuery>FILM FEST</p>
+            <p className='title'>SANDBOX&nbsp;<br class='title-break'/>FILM FEST</p>
           </Link>
         </div>
 
@@ -85,6 +85,10 @@ const StyledHeader = styled.header`
   background-color: var(--black);
   color: var(--white);
   font-weight: var(--medium-weight);
+
+  & .title-break {
+      display: none;
+    }
 
   & div {
     padding: 0 2rem;
@@ -196,6 +200,12 @@ const StyledHeader = styled.header`
     
     & a {
       padding: 0;
+    }
+  }
+
+  @media (max-width: 375px) {    
+    & .title-break {
+      display: visible;
     }
   }
 `
