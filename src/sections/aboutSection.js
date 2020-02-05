@@ -34,9 +34,16 @@ const profiles = [
 	{
 		name: 'Winston Liao',
 		bio: 'Winston is a designer, engineer, and filmmaker based in the San Francisco Bay Area. He is currently studying mechatronics at Stanford University with the goal of developing technologies that facilitate joyful interactions and meaningful connections.',
-		link: 'http://winstonliao.com',
+		link: 'https://winstonliao.com',
 		linkName: 'Portfolio',
 		image: '../images/winston.jpg'
+	},
+	{
+		name: 'Robert Muni',
+		bio: 'Robert is a senior studying Film with a concentration in screenwriting. His favorite genres to watch and write are dark comedy and magical realism.',
+		link: 'https://vimeo.com/robertmungai',
+		linkName: 'Vimeo',
+		image: '../images/robert.jpg'
 	},
 	{
 		name: 'Jack Virnich',
