@@ -55,8 +55,8 @@ const profiles = [
 	{
 		name: 'Jason McRuer',
 		bio: 'Jason has been writing, directing, shooting, and editing short films since 2012. Having learned most of his skills by messing around on projects, he has loved the rapid growth that has come from these intense, adrenaline-packed weekends of filmmaking.',
-		link: 'https://www.jasonmcruer.com',
-		linkName: 'Portfolio',
+		link: 'https://www.youtube.com/channel/UC3tuj5LSEXR65-2YfHA8KYA',
+		linkName: 'YouTube',
 		image: '../images/jason.jpg'
 	},
 ]
