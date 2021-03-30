@@ -1,46 +1,59 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import MediaQuery from 'react-responsive'
+import React, { Component } from "react"
+import styled from "styled-components"
+import MediaQuery from "react-responsive"
 
 class Hero extends Component {
-
   constructor() {
-    super();
+    super()
     this.state = {
-      actions: ['WRITE', 'SHOOT', 'DIRECT', 'EDIT'],
-      action: 'WRITE',
-    };
+      actions: ["WRITE", "SHOOT", "DIRECT", "EDIT"],
+      action: "WRITE",
+    }
   }
 
   componentDidMount() {
-    this.changeAction(0);
+    this.changeAction(0)
   }
 
   changeAction(index) {
     setTimeout(() => {
       this.setState(state => ({
-        action: state.actions[index%4],
+        action: state.actions[index % 4],
       }))
-      this.changeAction(index+1);
+      this.changeAction(index + 1)
     }, 1500)
   }
 
-	render() {
-    return(
-			<StyledHero id={this.props.id}>
-        <div className='text'>
-          <p className='subtitle'>STANFORD UNIVERSITY'S</p>
-          <p className='title'>SANDBOX <MediaQuery query="(max-width: 1023.98px)"><br></br></MediaQuery>FILM FEST</p>
-          <div className='action'>
-            <div className='actionOuter'><span className='actionInner'>{this.state.action}</span></div>
-            <span className='actionAfter'>&nbsp;A MOVIE <MediaQuery query="(max-width: 767.98px)"><br></br></MediaQuery> IN 48 HOURS</span>
+  render() {
+    return (
+      <StyledHero id={this.props.id}>
+        <div className="text">
+          <p className="subtitle">STANFORD UNIVERSITY'S</p>
+          <p className="title">
+            SANDBOX{" "}
+            <MediaQuery query="(max-width: 1023.98px)">
+              <br></br>
+            </MediaQuery>
+            FILM FEST
+          </p>
+          <div className="action">
+            <div className="actionOuter">
+              <span className="actionInner">{this.state.action}</span>
+            </div>
+            <span className="actionAfter">
+              &nbsp;A MOVIE{" "}
+              <MediaQuery query="(max-width: 767.98px)">
+                <br></br>
+              </MediaQuery>{" "}
+              IN <strike>48</strike> 168 HOURS
+            </span>
           </div>
-          {/* <p className='date'>JANUARY 17 - 19, 2020</p> */}
+          <p className="date">April 7 - 14, 2021</p>
         </div>
-        <div className='opacity'></div>
-			</StyledHero>
-		)
-	}
+        <div className="opacity"></div>
+      </StyledHero>
+    )
+  }
 }
 
 const StyledHero = styled.div`
@@ -50,7 +63,7 @@ const StyledHero = styled.div`
   padding-top: 50vh;
   padding-left: 15vw;
 
-  background-image: url('../images/film.jpg');
+  background-image: url("../images/film.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: none;
@@ -69,7 +82,7 @@ const StyledHero = styled.div`
   & .text {
     position: absolute;
     z-index: 2;
-    display: inline;    
+    display: inline;
 
     & span {
       font-size: var(--larger);
@@ -118,7 +131,7 @@ const StyledHero = styled.div`
         font-size: var(--display);
         line-height: 4rem;
       }
-      
+
       & .actionInner {
         border-bottom: solid 4px var(--yellow);
       }
@@ -141,12 +154,11 @@ const StyledHero = styled.div`
     padding-left: 3rem;
 
     & .text {
-
       & .title {
         margin-bottom: 1.5rem;
         line-height: 4rem;
       }
-    
+
       & > div {
         font-size: var(--small);
       }

@@ -4,15 +4,18 @@ import styled from "styled-components"
 
 import SplitLayout from "../components/splitLayout"
 import Paragraph from "../components/paragraph"
+import ParagraphCustom from "../components/paragraphCustom"
 import ParagraphContainer from "../components/paragraphContainer"
 
-const HowItWorksSection = ({ id }) => (
-  <StyledHowItWorksSection id={id}>
+const AwardsSection = ({ id }) => (
+  <StyledAwardsSection id={id}>
     <SplitLayout
       left={
         <div className="title-wrapper">
           <p className="title">
-            HOW<br></br>IT<br></br>WORKS
+            SPRING
+            <br />
+            AWARDS
           </p>
         </div>
       }
@@ -21,31 +24,30 @@ const HowItWorksSection = ({ id }) => (
           {paragraphs.map((paragraph, i) => (
             <Paragraph key={i} {...paragraph}></Paragraph>
           ))}
+          <ParagraphCustom title="Special Awards">
+            <p>
+              <strong>Remote Collaboration:</strong> Films that are set in at
+              least two separate households with their own sets of actors
+              <br />
+              <br />
+              <strong>Free Solo:</strong> For movies filmed and crewed by a
+              single person
+            </p>
+          </ParagraphCustom>
         </ParagraphContainer>
       }
     ></SplitLayout>
-  </StyledHowItWorksSection>
+  </StyledAwardsSection>
 )
 
 const paragraphs = [
   {
-    title: "Preparation & Kickoff",
-    text:
-      "Before the film fest, you can form your team of four or sign up to be matched with others. At the kickoff, your team will randomly pick prompts from a set of three categories. You have to use at least two of them in your film.",
-  },
-  {
-    title: "Writing, Shooting, & Editing",
-    text:
-      "After kickoff, you have 168 hours (7 days) to write, shoot, and edit your film. Your team members must be the main contributors to the creation of the film, though you may recruit household members to help out. All participants must follow social distancing protocols and Covid safety guidelines.",
-  },
-  {
-    title: "Screening & Awards",
-    text:
-      "The collection of films will be premiered on YouTube the day after the submission deadline, and the audience will vote on awards immediately after. Winners will be announced at an awards ceremony on Zoom once the short voting period is over.",
+    title: "Classic Awards",
+    text: "Sand d'Or, Best Actress, Best Actor, Best Cinematography",
   },
 ]
 
-const StyledHowItWorksSection = styled.div`
+const StyledAwardsSection = styled.div`
   & .title-wrapper {
     display: flex;
     align-items: center;
@@ -80,8 +82,8 @@ const StyledHowItWorksSection = styled.div`
   }
 `
 
-HowItWorksSection.propTypes = {}
+AwardsSection.propTypes = {}
 
-HowItWorksSection.defaultProps = {}
+AwardsSection.defaultProps = {}
 
-export default HowItWorksSection
+export default AwardsSection

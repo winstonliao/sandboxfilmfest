@@ -1,91 +1,94 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import { sendForm } from '../components/sendForm'
+import React, { Component } from "react"
+import styled from "styled-components"
+import { sendForm } from "../components/sendForm"
 
-import SingleLayout from '../components/singleLayout'
-import Input from '../components/input'
-import Button from '../components/button'
-import Modal from '../components/modal'
-import MessageBox from '../components/messageBox'
+import SingleLayout from "../components/singleLayout"
+import Input from "../components/input"
+import Button from "../components/button"
+import Modal from "../components/modal"
+import MessageBox from "../components/messageBox"
 
 class SignUpSection extends Component {
-
   constructor() {
-    super();
+    super()
     this.state = {
-      email: '',
+      email: "",
       showModal: false,
-    };
-    this.submitHandler = this.submitHandler.bind(this);
-    this.changeHandler = this.changeHandler.bind(this);
-    this.modalHandler = this.modalHandler.bind(this);
+    }
+    this.submitHandler = this.submitHandler.bind(this)
+    this.changeHandler = this.changeHandler.bind(this)
+    this.modalHandler = this.modalHandler.bind(this)
   }
 
   changeHandler(event) {
-    const name = event.target.name;
+    const name = event.target.name
     this.setState({
       [name]: event.target.value,
-    });
+    })
   }
 
   submitHandler() {
-    const form = {
-      email: this.state.email,
-    }
-    sendForm(form, 'AKfycbxrxqY2lHV3Tvg-XBtuIv1SqlNVF3U9yDt9tLdt5Cs3zsEHedY').then(() => {
-      this.setState({
-        email: '',
-      });
-      this.modalHandler();
-    }).catch(response => {
-      if (response.responseJSON && response.responseJSON.errors) {
-        alert("An error has occurred with submitting your email. Please try again.");
-      }
-    });
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdXYy989DPzPOVfIBYQj4OgqlS69vKTWTRV1br7rih9KsB9cg/viewform",
+      "_blank"
+    )
   }
 
   modalHandler() {
     this.setState(state => ({
       showModal: !state.showModal,
-    }));
+    }))
     setTimeout(() => {
-      document.body.style.overflowY = this.state.showModal ? 'hidden' : 'scroll';
-    }, 500);
+      document.body.style.overflowY = this.state.showModal ? "hidden" : "scroll"
+    }, 500)
   }
 
-	render() {
-    return(
-			<StyledSignUpSection id={this.props.id}>
-				<SingleLayout>
-					<p className='title'>SUBSCRIBE</p>
-					<p className='desc'>We are planning even more events in the future. Our next film fest will be happening early spring quarter. Please sign up below to be added to our mailing list so you can get announcements sent directly to your inbox!</p>
-					<Input onChange={this.changeHandler} name='email' label='EMAIL' placeholder='Email Address' color='var(--white)' isLong={ false } value={ this.state.email }></Input>
-					<Button name='SUBMIT' color='var(--white)' bgColor='var(--black)' onClick={ this.submitHandler }></Button>
-				</SingleLayout>
-				<Modal showModal={this.state.showModal} clickHandler={this.modalHandler}>
-          <MessageBox headline='Thanks!' message='You have been added to our mailing list.'></MessageBox>
+  render() {
+    return (
+      <StyledSignUpSection id={this.props.id}>
+        <SingleLayout>
+          <p className="title">SUBSCRIBE</p>
+          <p className="desc">
+            We are planning even more events in the future. Please sign up below
+            to be added to our mailing list so you can get announcements sent
+            directly to your inbox!
+          </p>
+          <Button
+            name="SUBSCRIBE"
+            color="var(--white)"
+            bgColor="var(--black)"
+            onClick={this.submitHandler}
+          ></Button>
+        </SingleLayout>
+        <Modal
+          showModal={this.state.showModal}
+          clickHandler={this.modalHandler}
+        >
+          <MessageBox
+            headline="Thanks!"
+            message="You have been added to our mailing list."
+          ></MessageBox>
         </Modal>
-			</StyledSignUpSection>
-		)
-	}
+      </StyledSignUpSection>
+    )
+  }
 }
 
 const StyledSignUpSection = styled.div`
+  color: var(--white);
+  background-color: var(--black);
 
-	color: var(--white);
-	background-color: var(--black);
+  & > div {
+    height: 100vh;
+  }
 
-	& > div {
-		height: 100vh;
-	}
-
-	& .title {
-		text-align: center;
+  & .title {
+    text-align: center;
     font-family: var(--display-font);
     font-weight: var(--display-weight);
-		font-size: var(--display);
-		margin-bottom: 4rem;
-	}
+    font-size: var(--display);
+    margin-bottom: 4rem;
+  }
 
   @media (max-width: 1023.98px) {
     & > div {

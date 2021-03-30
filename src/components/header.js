@@ -1,65 +1,80 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
-import styled from 'styled-components'
-import MediaQuery from 'react-responsive'
+import styled from "styled-components"
+import MediaQuery from "react-responsive"
 
-import logo from '../images/logo.png'
+import logo from "../images/logo.png"
 
 class Header extends Component {
-
   constructor() {
-    super();
+    super()
     this.state = {
       showMobileNav: false,
-    };
-    this.hamburgerHandler = this.hamburgerHandler.bind(this);
+    }
+    this.hamburgerHandler = this.hamburgerHandler.bind(this)
   }
 
   hamburgerHandler() {
     this.setState(state => ({
       showMobileNav: !state.showMobileNav,
-    }));
+    }))
     setTimeout(() => {
-      document.body.style.overflowY = this.state.showMobileNav ? 'hidden' : 'scroll';
-    }, 500);
+      document.body.style.overflowY = this.state.showMobileNav
+        ? "hidden"
+        : "scroll"
+    }, 500)
   }
 
   render() {
-    return(
+    return (
       <StyledHeader>
-        <div className='left'>
-          <Link to='/#hero'>
-            <img src={logo} alt='logo' className='logo'></img>
-            <p className='title'>SANDBOX&nbsp;<br class='title-break'/>FILM FEST</p>
+        <div className="left">
+          <Link to="/#hero">
+            <img src={logo} alt="logo" className="logo"></img>
+            <p className="title">
+              SANDBOX&nbsp;
+              <br class="title-break" />
+              FILM FEST
+            </p>
           </Link>
         </div>
 
-        <div className='right'>
-          <MediaQuery query="(min-width: 1080.02px)">      
+        <div className="right">
+          <MediaQuery query="(min-width: 1080.02px)">
             <nav>
-              <Link to='/#how_it_works'>HOW IT WORKS</Link>
-              <Link to='/#watch'>WATCH</Link>
-              {/* <Link to='/#event'>WINTER 2020</Link> */}
-              <Link to='/#sign_up'>SUBSCRIBE</Link>
-              <Link to='/#about'>ABOUT</Link>
-              <Link to='/#contact'>CONTACT</Link>
+              <Link to="/#how_it_works">HOW IT WORKS</Link>
+              <Link to="/#watch">WATCH</Link>
+              <Link to="/#event">SPRING 2021</Link>
+              <Link to="/#awards">AWARDS</Link>
+              <Link to="/#sign_up">SUBSCRIBE</Link>
+              <Link to="/#about">ABOUT</Link>
+              <Link to="/#contact">CONTACT</Link>
             </nav>
           </MediaQuery>
 
           <MediaQuery query="(max-width: 1080px)">
-            <div className='mobile-nav'>
-              <div className='nav-item dropdown'>
-                <p className='nav-title hamburger' onClick={this.hamburgerHandler}>{this.state.showMobileNav ? '✕' : '☰' }</p> 
-                <nav onClick={this.hamburgerHandler} className={this.state.showMobileNav ? 'show' : ''}>
-                  <Link to='/#how_it_works'>HOW IT WORKS</Link>
-                  <Link to='/#watch'>WATCH</Link>
-                  {/* <Link to='/#event'>WINTER 2020</Link> */}
-                  <Link to='/#sign_up'>SUBSCRIBE</Link>
-                  <Link to='/#about'>ABOUT</Link>
-                  <Link to='/#contact'>CONTACT</Link>
+            <div className="mobile-nav">
+              <div className="nav-item dropdown">
+                <p
+                  className="nav-title hamburger"
+                  onClick={this.hamburgerHandler}
+                >
+                  {this.state.showMobileNav ? "✕" : "☰"}
+                </p>
+                <nav
+                  onClick={this.hamburgerHandler}
+                  className={this.state.showMobileNav ? "show" : ""}
+                >
+                  <Link to="/#how_it_works">HOW IT WORKS</Link>
+                  <Link to="/#watch">WATCH</Link>
+                  <Link to="/#event">SPRING 2021</Link>
+                  <Link to="/#awards">AWARDS</Link>
+                  <Link to="/#sign_up">SUBSCRIBE</Link>
+                  <Link to="/#about">ABOUT</Link>
+                  <Link to="/#contact">CONTACT</Link>
                 </nav>
-                <div className='cover'></div>
+                <div className="cover"></div>
               </div>
             </div>
           </MediaQuery>
@@ -87,8 +102,8 @@ const StyledHeader = styled.header`
   font-weight: var(--medium-weight);
 
   & .title-break {
-      display: none;
-    }
+    display: none;
+  }
 
   & div {
     padding: 0 2rem;
@@ -182,9 +197,9 @@ const StyledHeader = styled.header`
       &.show {
         transform: translateX(0%);
 
-        -webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.3);
-        -moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.3);
-        box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.3);
+        -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.3);
       }
     }
 
@@ -197,13 +212,13 @@ const StyledHeader = styled.header`
 
   @media (max-width: 1080px) {
     height: 6rem;
-    
+
     & a {
       padding: 0;
     }
   }
 
-  @media (max-width: 375px) {    
+  @media (max-width: 375px) {
     & .title-break {
       display: visible;
     }
